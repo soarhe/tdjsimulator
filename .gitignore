@@ -1,0 +1,15 @@
+# Source Excel workbooks are local inputs, not repository assets.
+*.[xX][lL][sS]
+*.[xX][lL][sS][xX]
+*.[xX][lL][sS][mM]
+*.[xX][lL][sS][bB]
+~$*
+
+# Local OS, runtime and editor artifacts.
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env
+.env.*
+!.env.example

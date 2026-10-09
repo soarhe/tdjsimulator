@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {Engine} from '../dist/engine.mjs';
+const data=JSON.parse(fs.readFileSync(new URL('../dist/workbook.json',import.meta.url)));
+test('Excel 原式逐格匹配保存结果',()=>{const e=new Engine(data);let count=0;for(const [sheet,cells]of Object.entries(data.cached))for(const [cell,expected]of Object.entries(cells)){if(expected==null)continue;const actual=e.cell(sheet,cell);if(typeof expected==='number')assert.ok(Math.abs(actual-expected)<1e-6,`${sheet}!${cell}: ${actual} != ${expected}`);else assert.equal(actual,expected,`${sheet}!${cell}`);count++;}assert.ok(count>500);});
+test('修正 D 类免伤仅累加一次，并供排行榜复用',()=>{const e=new Engine(data,{'工作台1!L50':0.1},true);assert.equal(e.cell('工作台1','L51'),0.1);assert.equal(e.cell('排行计算1','V2'),0.1);});
+test('自动克制矩阵随双方属性改变',()=>{const e=new Engine(data,{'工作台1!B3':'雷','工作台1!B29':'冰'},true);assert.equal(e.cell('工作台1','D26'),1.3);e.reset({'工作台1!B3':'雷','工作台1!B29':'炎'},true);assert.equal(e.cell('工作台1','D26'),0.75);});
+test('等血量伤害判定击杀',()=>{const e=new Engine(data,{'工作台1!P5':100,'工作台1!B51':100},true);assert.equal(e.cell('工作台1','V3'),'击杀');});
+test('词条变化影响伤害；全部角色可计算',()=>{const e=new Engine(data);const old=e.cell('工作台1','P5');e.reset({'工作台1!C8':0.1});assert.ok(e.cell('工作台1','P5')<old);for(let r=3;r<=37;r++){e.reset({'工作台1!A3':data.sheets['数据_角色']['B'+r]},true);assert.ok(Number.isFinite(e.cell('工作台1','P5')));}});
