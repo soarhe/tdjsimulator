@@ -2,6 +2,12 @@
 
 纯静态页面，无前端依赖或构建步骤。原 Excel 保持不变。
 
+## 在线访问
+
+GitHub Pages：https://soarhe.github.io/tdjsimulator/
+
+通过 `.github/workflows/pages.yml` 发布 `h5/dist`。推送 main 分支中的页面改动会自动部署，也可在 Actions 页面手动运行。Excel 和离线 ZIP 不会上传到 Pages 站点。
+
 ## 离线分享
 
 执行 `npm run package:offline`（或 `python3 scripts/package_offline.py`），在 `releases/` 生成离线 HTML 和 ZIP。
