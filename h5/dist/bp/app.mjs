@@ -1,10 +1,13 @@
+import {setupFloatingCommand} from './floating-command.mjs';
+import {analyzeFormations} from './formations.mjs?v=20261023-selected-roles';
 import {videoRoster} from './heroes.mjs';
 import {catalog as heroes} from './catalog.mjs';
-import {createBoxEditor,validBox} from './box-editor.mjs';
+import {createBoxEditor,validBox} from './box-editor.mjs?v=20261023-editor-selection-sync';
 import {portraits} from './portraits.mjs';
 import {steps,parseRoster,createMatch,sideForRole,statusFor,applyMove} from './rules.mjs';
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels=['甲方','乙方'], key='tdj-bp-v1';
+const updateFloatingCommand=setupFloatingCommand();
 let match=null,selected=[];
 const roleName=(m,s)=>m.first===s?'先手':'后手';
 const owner=(m,s)=>`${labels[s]} · ${roleName(m,s)}`;
@@ -25,8 +28,38 @@ const boxEditor=createBoxEditor({portrait,escape:esc,onSave:(side,names)=>{$('#r
 for(const side of [0,1])$('#edit-box'+side).addEventListener('click',()=>boxEditor.open(side,$('#roster'+side).value.split('\n').filter(Boolean)));
 
 function description(m,step){return `${owner(m,sideForRole(m,step.actor))} ${step.type==='ban'?'禁用对方':'选择己方'} ${step.count} 名英灵`;}
+function formationPanel(side){
+  const conditionLabel=text=>text.replace(/炎[／/]冰[／/]雷/g,'下三色').replace(/光[／/]暗[／/]幽/g,'上三色');
+  // Pending choices preview their consequences without writing draft history.
+  const step=steps[match.history.length];
+  const preview=!!(step&&selected.length&&sideForRole(match,step.target)===side);
+  const projected=preview?{...match,history:[...match.history,{side,type:step.type,names:selected}]}:match;
+  // Put unavailable formations last; preserve box order within each section.
+  const results=analyzeFormations(projected,side).sort((a,b)=>Number(a.state==='impossible')-Number(b.state==='impossible')||match.rosters[side].indexOf(a.leader)-match.rosters[side].indexOf(b.leader));
+  const names={ready:'已满足',possible:'仍可开启',impossible:'无法开启'};
+  return `<div class="formations"><div class="formations-heading"><h3>战阵</h3><span class="formation-mode ${preview?'preview':''}">${preview?'待确认预演':'已确认局面'}</span></div><div class="formation-counts" aria-live="polite">${Object.entries(names).map(([state,label])=>`<span class="${state}" title="${label}">${label} <b>${results.filter(f=>f.state===state).length}</b></span>`).join('')}</div><div class="formation-list">${results.map((f,index)=>{
+    const missingLeader=f.needed.includes(f.leader);
+    const reason=f.reason+(missingLeader?'（含未上阵阵眼）':'');
+    const candidates=f.candidates??[];
+    const candidateGroups=(f.candidateGroups??(candidates.length?[{label:'可选',candidates}]:[])).map(group=>({...group,label:conditionLabel(group.label)}));
+    const recommend=f.needed.length&&f.witness.some(n=>statusFor(projected,side,n)==='pick');
+    const inlineCandidates=[];
+    const addCandidate=(group)=>{
+      const name=group.candidates.find(n=>n!==f.leader&&!inlineCandidates.some(c=>c.name===n));
+      if(name&&inlineCandidates.length<2)inlineCandidates.push({name,label:group.label});
+    };
+    // Give each distinct supporting role a place before filling a second alternative.
+    candidateGroups.forEach(addCandidate);
+    candidateGroups.forEach(addCandidate);
+    return `<details class="formation-card ${f.state} ${f.state==='impossible'&&results[index-1]?.state!=='impossible'?'impossible-start':''}" data-formation="${side}-${esc(f.name)}"><summary title="${esc(f.name+' · '+f.leader+'：'+reason)}"><span class="formation-owner ${statusFor(projected,side,f.leader)==='pick'?'leader-picked':'leader-unpicked'}" role="img" aria-label="阵眼：${esc(f.leader)}" title="${esc(f.leader)}">${portrait(f.leader)}</span><span class="formation-name"><span class="formation-title">${esc(f.name)}</span><span class="formation-available-count" title="仍可选的非阵眼角色数">（${new Set(candidates.filter(n=>n!==f.leader)).size}）</span></span><span class="formation-reason">${f.state==='possible'?`缺 ${f.needed.length} 人`:names[f.state]}</span><span class="formation-inline-needed">${recommend?inlineCandidates.map(({name,label})=>`<span class="formation-candidate formation-role-candidate" role="img" aria-label="${esc(label+'候选：'+name)}" title="${esc(label+'：'+name)}">${portrait(name)}<small>${esc(label)}</small></span>`).join(''):''}</span></summary><div class="formation-info"><p>${esc(f.leader)} · ${esc(reason)}</p><p class="formation-condition">${esc(conditionLabel(f.condition))} · <a href="${esc(f.source)}" target="_blank" rel="noopener noreferrer">Wiki ↗</a></p>${f.effect?`<p class="formation-effect">${esc(f.effect)}</p>`:''}<div class="formation-option-groups" role="group" aria-label="仍可选的配阵英灵">${candidateGroups.length?candidateGroups.map(group=>`<div class="formation-option-row"><span class="formation-option-label">${esc(group.label)}</span><div class="formation-options">${group.satisfied?'<span class="formation-role-selected">已选</span>':group.candidates.length?group.candidates.map(n=>`<span class="formation-candidate" role="img" aria-label="${esc(n)}" title="${esc(n)}">${portrait(n)}</span>`).join(''):'<span class="muted">无可选英灵</span>'}</div></div>`).join(''):'<span class="muted">暂无可补选的配阵英灵</span>'}</div></div></details>`;
+  }).join('')||'<p class="muted">盒子中暂无战阵。</p>'}</div></div>`;
+
+}
 function render(){
+  const pagePosition={left:window.scrollX,top:window.scrollY};
+  document.body.classList.toggle('drafting',!!match);
   $('#setup').hidden=!!match;$('#arena').hidden=!match;
+  updateFloatingCommand();
   if(!match)return;
   const index=match.history.length,step=steps[index];
   $('#step-label').textContent=step?`STEP ${String(index+1).padStart(2,'0')} / 16 · ${step.type==='ban'?'BAN 禁用':'PICK 上阵'}`:'DRAFT COMPLETE / 推演完成';
@@ -37,19 +70,22 @@ function render(){
   $('#confirm').classList.toggle('danger',step?.type==='ban');
   $('#undo').disabled=index===0;$('#progress-fill').style.width=`${index/16*100}%`;
   $('#assignment').textContent=`本局随机分配：${labels[match.first]}先手 / ${labels[1-match.first]}后手`;
+  const expanded=new Set([...document.querySelectorAll('[data-formation][open]')].map(el=>el.dataset.formation));
   $('#boards').innerHTML=[0,1].map(side=>{
     const active=step&&sideForRole(match,step.target)===side;
     const picks=match.history.filter(x=>x.side===side&&x.type==='pick').flatMap(x=>x.names);
     const bans=match.history.filter(x=>x.side===side&&x.type==='ban').flatMap(x=>x.names);
     const ordered=[...picks,...match.rosters[side].filter(name=>statusFor(match,side,name)==='available'),...bans];
-    return `<section class="panel board side-${side} ${active?'active':''}" aria-label="${labels[side]}阵容"><div class="board-title"><div><span class="side-dot"></span><h2>${labels[side]}</h2><span class="role">${roleName(match,side)}</span></div><span class="muted">已选 ${picks.length}/5 · 已禁 ${bans.length}/6</span></div><div class="lineup" aria-label="上阵英灵">${Array.from({length:5},(_,i)=>`<div class="slot ${picks[i]?'filled':''}"><small>${String(i+1).padStart(2,'0')}</small>${picks[i]?portrait(picks[i]):''}<span>${esc(picks[i]||'待上阵')}</span></div>`).join('')}</div><div class="roster-grid">${ordered.map(name=>{
+    return `<section class="panel board side-${side} ${active?'active':''}" aria-label="${labels[side]}阵容"><div class="board-title"><div><span class="side-dot"></span><h2>${labels[side]}</h2><span class="role">${roleName(match,side)}</span></div><span class="muted">已选 ${picks.length}/5 · 已禁 ${bans.length}/6</span></div><div class="lineup" aria-label="上阵英灵">${Array.from({length:5},(_,i)=>`<div class="slot ${picks[i]?'filled':''}"><small>${String(i+1).padStart(2,'0')}</small>${picks[i]?portrait(picks[i]):''}<span>${esc(picks[i]||'待上阵')}</span></div>`).join('')}</div><div class="board-content"><div class="roster-grid">${ordered.map(name=>{
       const i=match.rosters[side].indexOf(name);
       const status=statusFor(match,side,name),on=selected.includes(name)&&active,hero=heroes.find(h=>h.name===name);
-      return `<button class="hero ${status} ${on?'selected':''}" data-side="${side}" data-index="${i}" ${!active||status!=='available'?'disabled':''} aria-pressed="${!!on}" aria-label="${esc(name)}，${status==='ban'?'已禁用':status==='pick'?'已上阵':'可选'}"><span class="hero-meta">${esc(hero?hero.element+' · '+hero.job:'自定义英灵')}</span>${portrait(name,status)}<strong>${esc(name)}</strong><span class="hero-status">${status==='ban'?'× 已禁用':status==='pick'?'✓ 已上阵':on?'✓ 待确认':'候选'}</span></button>`;
-    }).join('')}</div></section>`;
+      return `<button class="hero ${status} ${on?'selected':''}" data-side="${side}" data-index="${i}" ${!active||status!=='available'?'disabled':''} aria-pressed="${!!on}" aria-label="${esc(name)}，${status==='ban'?'已禁用':status==='pick'?'已上阵':'可选'}"><span class="hero-meta">${esc(hero?hero.element+' · '+hero.job:'自定义英灵')}</span>${portrait(name,status)}<strong>${esc(name)}</strong></button>`;
+    }).join('')}</div>${formationPanel(side)}</div></section>`;
   }).join('');
+  for(const el of document.querySelectorAll('[data-formation]'))el.open=expanded.has(el.dataset.formation);
   $('#history-count').textContent=`${index} / 16`;
   $('#history').innerHTML=match.history.map((move,i)=>`<li><span class="move-index">${String(i+1).padStart(2,'0')}</span><span>${esc(owner(match,sideForRole(match,steps[i].actor)))}</span><b class="${move.type}">${move.type==='ban'?'禁用':'上阵'}</b><strong>${move.names.map(esc).join('、')}</strong></li>`).join('')||'<li class="muted">尚未开始禁选，点击候选英灵落下第一手。</li>';
+  window.scrollTo({...pagePosition,behavior:'instant'});
 }
 $('#rules').innerHTML=steps.map(s=>`<li>${s.actor===0?'先手':'后手'}${s.type==='ban'?'禁对方':'选己方'} ${s.count} 名</li>`).join('');
 for(const s of [0,1]) $('#roster'+s).value=videoRoster.join('\n');
@@ -75,6 +111,12 @@ $('#start').addEventListener('click',()=>{
   try{const rosters=[0,1].map(s=>{try{const names=parseRoster($('#roster'+s).value);if(!validBox(names))throw Error('请选择 15 名绝品或典藏英灵');return names;}catch(e){$('#edit-box'+s).focus();throw Error(labels[s]+'：'+e.message);}});match=createMatch(rosters,crypto.getRandomValues(new Uint32Array(1))[0]%2);selected=[];notice('');save();render();$('#arena').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}
 });
 $('#boards').addEventListener('click',event=>{
+  const summary=event.target.closest('.formation-card > summary');
+  if(summary){
+    const current=summary.parentElement;
+    for(const panel of current.closest('.board').querySelectorAll('.formation-card[open]'))if(panel!==current)panel.open=false;
+    return;
+  }
   const button=event.target.closest('button[data-index]');if(!button||button.disabled)return;
   const step=steps[match.history.length],side=Number(button.dataset.side);if(side!==sideForRole(match,step.target))return;
   const name=match.rosters[side][Number(button.dataset.index)];
@@ -83,7 +125,7 @@ $('#boards').addEventListener('click',event=>{
   else selected=[...selected.slice(1),name];
   notice('');render();$('#boards').querySelector(`[data-side="${side}"][data-index="${button.dataset.index}"]`)?.focus({preventScroll:true});
 });
-$('#confirm').addEventListener('click',()=>{try{match=applyMove(match,selected);selected=[];notice('');save();render();$('#instruction').setAttribute('tabindex','-1');$('#instruction').focus({preventScroll:true});$('.command').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}});
+$('#confirm').addEventListener('click',()=>{try{match=applyMove(match,selected);selected=[];notice('');save();render();$('#instruction').setAttribute('tabindex','-1');$('#instruction').focus({preventScroll:true});}catch(e){notice(e.message);}});
 $('#undo').addEventListener('click',()=>{if(!match.history.length)return;match={...match,history:match.history.slice(0,-1)};selected=[];notice('已撤销上一步。');save();render();});
 $('#restart').addEventListener('click',()=>$('#reset-dialog').showModal());
 $('#reset-dialog').addEventListener('close',()=>{if($('#reset-dialog').returnValue!=='reset')return;match=null;selected=[];notice('');save();render();$('#setup').scrollIntoView({behavior:'smooth'});});

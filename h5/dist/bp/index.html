@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b20"><meta name="description" content="天地劫 BP 模拟：15 人阵容，随机先后手，完整 16 步禁选"><title>天地劫 · 阵前推演</title><link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script><link rel="icon" href="data:,"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b20"><meta name="description" content="天地劫 BP 模拟：15 人阵容，随机先后手，完整 16 步禁选"><title>天地劫 · 阵前推演</title><link rel="stylesheet" href="style.css?v=20261023-editor-selection-sync"><script type="module" src="app.mjs?v=20261023-editor-selection-sync"></script><link rel="icon" href="data:,"></head>
 <body>
 <header class="site-header"><a class="brand" href="./"><span class="seal">劫</span><span>天地劫<small>阵前推演 · BP 模拟</small></span></a><a class="back" href="../">伤害演算 ↗</a></header>
 <main>
@@ -12,10 +12,11 @@
 <div class="setup-actions"><p id="setup-help" class="muted">双方使用默认的 15 人盒子，可分别修改。</p><button id="start" class="primary">随机先后手 · 开始推演 <span>→</span></button></div>
 </section>
 <section id="arena" hidden>
-<div class="command panel"><div><p id="step-label" class="eyebrow"></p><h2 id="instruction"></h2><p id="selection-note" class="muted"></p></div><div class="command-actions"><button id="undo" class="subtle">撤销上一步</button><button id="confirm" class="primary">确认选择</button></div><div class="progress"><div id="progress-fill"></div></div></div>
+<div class="command-anchor"><div class="command panel"><div><p id="step-label" class="eyebrow"></p><h2 id="instruction"></h2><p id="selection-note" class="muted"></p></div><div class="command-actions"><button id="undo" class="subtle">撤销上一步</button><button id="confirm" class="primary">确认选择</button></div><div class="progress"><div id="progress-fill"></div></div></div>
+</div>
 <div id="boards" class="boards"></div>
 <div class="bottom-bar"><span id="assignment" class="muted"></span><div><button id="copy" class="subtle">复制 BP 记录</button><button id="restart" class="subtle">重新配置</button></div></div>
-<details class="panel history" open><summary>禁选记录 <span id="history-count"></span></summary><ol id="history"></ol></details>
+<details class="panel history"><summary>禁选记录 <span id="history-count"></span></summary><ol id="history"></ol></details>
 </section>
 <p id="notice" role="status" aria-live="polite"></p>
 <details class="panel rulebook"><summary>本局规则 <span>15 人 · 6 禁 · 5 选</span></summary><p>随机分配先后手，先手先禁，后手先选。已禁用与已上阵的英灵不能再次禁选。每方最终上阵 5 名，禁用 6 名，剩余 4 名。</p><ol id="rules"></ol><p class="muted">不包含计时、援战与联网对战。确认后可撤销；刷新页面保留当前进度（浏览器允许本地存储时）。</p></details>
@@ -29,6 +30,6 @@
 <div class="editor-filters"><label>搜索英灵<input id="editor-search" type="search" placeholder="输入英灵名字" autocomplete="off"></label><label>属相<select id="editor-element"><option value="">全部属相</option></select></label><label>职业<select id="editor-job"><option value="">全部职业</option></select></label></div>
 <div class="catalog-heading"><span id="editor-pool-label"></span><span id="editor-results"></span></div>
 <div id="editor-catalog" class="editor-catalog"></div>
-<div class="editor-footer"><p id="editor-message" role="status" aria-live="polite"></p><button id="editor-save" class="primary">保存盒子</button></div>
+<div class="editor-footer"><p id="editor-message" role="status" aria-live="polite"></p><button id="editor-cancel-replacement" type="button" class="subtle" hidden>取消替换</button><button id="editor-save" class="primary">保存盒子</button></div>
 </dialog>
 </body></html>
