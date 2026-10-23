@@ -7,9 +7,9 @@
 <section class="intro"><div><p class="eyebrow">BAN / PICK SIMULATOR</p><h1>落子之前，<em>胜负已起。</em></h1><p>十五人入局，五人应战。推演你的阵容与取舍。</p></div><div class="intro-mark" aria-hidden="true">弈</div></section>
 <section id="setup" class="panel">
 <div class="section-title"><div><p class="eyebrow">01 / PREPARATION</p><h2>配置双方阵容</h2></div><span class="chip">同屏双人 · 本地模拟</span></div>
-<p class="muted">每方填写 15 名英灵，一行一名，也可用逗号分隔。双方可使用相同英灵。</p>
-<div class="setup-grid"><label>甲方 · 阵容 <span id="count0"></span><textarea id="roster0" rows="9" spellcheck="false" aria-describedby="setup-help"></textarea><button type="button" id="preset0" class="subtle preset">载入视频左侧盒子</button></label><label>乙方 · 阵容 <span id="count1"></span><textarea id="roster1" rows="9" spellcheck="false" aria-describedby="setup-help"></textarea><button type="button" id="preset1" class="subtle preset">载入视频左侧盒子</button></label></div>
-<div class="setup-actions"><p id="setup-help" class="muted">双方默认使用视频左侧的 15 人盒子，可分别修改。</p><button id="start" class="primary">随机先后手 · 开始推演 <span>→</span></button></div>
+<p class="muted">双方使用默认盒子。点击“编辑盒子”，通过头像调整各自的 15 人阵容。</p>
+<div class="setup-grid"><section class="box-preview"><div class="box-heading"><h3>甲方 · 盒子</h3><span id="count0"></span></div><input type="hidden" id="roster0"><div id="box-preview0" class="box-portraits"></div><div class="box-actions"><button type="button" id="edit-box0" class="primary">编辑盒子</button><button type="button" id="preset0" class="subtle">恢复默认盒子</button></div></section><section class="box-preview"><div class="box-heading"><h3>乙方 · 盒子</h3><span id="count1"></span></div><input type="hidden" id="roster1"><div id="box-preview1" class="box-portraits"></div><div class="box-actions"><button type="button" id="edit-box1" class="primary">编辑盒子</button><button type="button" id="preset1" class="subtle">恢复默认盒子</button></div></section></div>
+<div class="setup-actions"><p id="setup-help" class="muted">双方使用默认的 15 人盒子，可分别修改。</p><button id="start" class="primary">随机先后手 · 开始推演 <span>→</span></button></div>
 </section>
 <section id="arena" hidden>
 <div class="command panel"><div><p id="step-label" class="eyebrow"></p><h2 id="instruction"></h2><p id="selection-note" class="muted"></p></div><div class="command-actions"><button id="undo" class="subtle">撤销上一步</button><button id="confirm" class="primary">确认选择</button></div><div class="progress"><div id="progress-fill"></div></div></div>
@@ -21,4 +21,14 @@
 <details class="panel rulebook"><summary>本局规则 <span>15 人 · 6 禁 · 5 选</span></summary><p>随机分配先后手，先手先禁，后手先选。已禁用与已上阵的英灵不能再次禁选。每方最终上阵 5 名，禁用 6 名，剩余 4 名。</p><ol id="rules"></ol><p class="muted">不包含计时、援战与联网对战。确认后可撤销；刷新页面保留当前进度（浏览器允许本地存储时）。</p></details>
 </main><footer><span>天地劫 · 阵前推演</span><a href="https://wiki.biligame.com/tdj/%E8%8B%B1%E7%81%B5%E5%9B%BE%E9%89%B4" target="_blank" rel="noopener noreferrer">英灵头像来源：天地劫 BWIKI ↗</a></footer>
 <dialog id="reset-dialog"><h2>返回阵容配置？</h2><p>将清空本局禁选记录，保留双方阵容。</p><form method="dialog"><button value="cancel" class="subtle">继续本局</button><button value="reset" class="primary">重新配置</button></form></dialog>
+<dialog id="box-editor" aria-labelledby="editor-title">
+<div class="editor-header"><div><p class="eyebrow">ROSTER EDITOR / 盒子编辑</p><h2 id="editor-title">编辑盒子</h2></div><button id="editor-cancel" class="subtle">取消</button></div>
+<div class="editor-selected-header"><strong>当前盒子 <span id="editor-count"></span></strong><button id="editor-default" class="subtle">恢复默认盒子</button></div>
+<p class="muted">点击盒内头像指定替换位置，再点击下方英灵替换；点击 × 移除。选满 15 人后保存。</p>
+<div id="editor-roster" class="editor-roster"></div>
+<div class="editor-filters"><label>搜索英灵<input id="editor-search" type="search" placeholder="输入英灵名字" autocomplete="off"></label><label>属相<select id="editor-element"><option value="">全部属相</option></select></label><label>职业<select id="editor-job"><option value="">全部职业</option></select></label></div>
+<div class="catalog-heading"><span id="editor-pool-label"></span><span id="editor-results"></span></div>
+<div id="editor-catalog" class="editor-catalog"></div>
+<div class="editor-footer"><p id="editor-message" role="status" aria-live="polite"></p><button id="editor-save" class="primary">保存盒子</button></div>
+</dialog>
 </body></html>

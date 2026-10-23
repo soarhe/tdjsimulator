@@ -1,4 +1,6 @@
-import {heroes,videoRoster} from './heroes.mjs';
+import {videoRoster} from './heroes.mjs';
+import {catalog as heroes} from './catalog.mjs';
+import {createBoxEditor,validBox} from './box-editor.mjs';
 import {portraits} from './portraits.mjs';
 import {steps,parseRoster,createMatch,sideForRole,statusFor,applyMove} from './rules.mjs';
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -14,7 +16,14 @@ function portrait(name,status='available') {
 document.addEventListener('error',event=>{if(event.target.matches?.('.portrait img'))event.target.hidden=true;},true);
 function notice(message){$('#notice').textContent=message;}
 function save(){try{localStorage.setItem(key,JSON.stringify({rosters:[0,1].map(s=>$('#roster'+s).value),match}));}catch{notice('浏览器未允许本地存储，本局可继续操作，但刷新后无法恢复。');}}
-function updateCounts(){for(const s of [0,1]){const input=$('#roster'+s);const count=input.value.split(/[\n,，、;；]+/).map(x=>x.trim()).filter(Boolean).length;$('#count'+s).textContent=`${count} / 15`;}}
+function updateCounts(){for(const s of [0,1]){
+  const names=$('#roster'+s).value.split('\n').filter(Boolean);
+  $('#count'+s).textContent=`${names.length} / 15`;
+  $('#box-preview'+s).innerHTML=names.map(name=>`<div class="preview-hero">${portrait(name)}<span>${esc(name)}</span></div>`).join('');
+}}
+const boxEditor=createBoxEditor({portrait,escape:esc,onSave:(side,names)=>{$('#roster'+side).value=names.join('\n');updateCounts();save();notice(labels[side]+'盒子已保存。');}});
+for(const side of [0,1])$('#edit-box'+side).addEventListener('click',()=>boxEditor.open(side,$('#roster'+side).value.split('\n').filter(Boolean)));
+
 function description(m,step){return `${owner(m,sideForRole(m,step.actor))} ${step.type==='ban'?'禁用对方':'选择己方'} ${step.count} 名英灵`;}
 function render(){
   $('#setup').hidden=!!match;$('#arena').hidden=!match;
@@ -49,21 +58,21 @@ try{
   if(saved){
     // Correct only the previously shipped video preset, preserving custom boxes.
     const correctVideoName=n=>({'紫霆司命':'苏醒者','相胤':'明光剑圣'}[n]||n);
-    const isOldVideoRoster=r=>Array.isArray(r)&&r.length===15&&r.every((n,i)=>correctVideoName(n)===videoRoster[i]);
+    const previousDefault=videoRoster.map(n=>n==='剑心无邪'?'桑然':n==='瑚儿'?'幽寰夏侯仪':n);
+    const isOldVideoRoster=r=>Array.isArray(r)&&r.length===15&&r.every((n,i)=>correctVideoName(n)===previousDefault[i]);
     if(Array.isArray(saved.rosters))saved.rosters=saved.rosters.map(r=>typeof r==='string'&&isOldVideoRoster(r.split(/[\n,，、;；]+/).map(n=>n.trim()).filter(Boolean))?videoRoster.join('\n'):r);
     if(Array.isArray(saved.match?.rosters))saved.match.rosters=saved.match.rosters.map((r,side)=>{
       if(!isOldVideoRoster(r))return r;
       if(Array.isArray(saved.match.history))for(const move of saved.match.history)if(move.side===side&&Array.isArray(move.names))move.names=move.names.map(correctVideoName);
-      return [...videoRoster];
+      return [...previousDefault]; // Keep an existing draft’s participants unchanged.
     });
     if(Array.isArray(saved.rosters)&&saved.rosters.length===2&&saved.rosters.every(x=>typeof x==='string'))saved.rosters.forEach((r,i)=>$('#roster'+i).value=r);
     if(saved.match){let restored=createMatch(saved.match.rosters,saved.match.first);for(const move of saved.match.history){const step=steps[restored.history.length];if(!step||move.side!==sideForRole(restored,step.target)||move.type!==step.type)throw Error('无效进度');restored=applyMove(restored,move.names);}match=restored;notice('已恢复上次的 BP 进度。');}
   }
 }catch{notice('未能恢复旧进度，请重新开始本局。');}
 updateCounts();render();
-for(const s of [0,1])$('#roster'+s).addEventListener('input',()=>{updateCounts();save();});
 $('#start').addEventListener('click',()=>{
-  try{const rosters=[0,1].map(s=>{try{return parseRoster($('#roster'+s).value);}catch(e){$('#roster'+s).focus();throw Error(labels[s]+'：'+e.message);}});match=createMatch(rosters,crypto.getRandomValues(new Uint32Array(1))[0]%2);selected=[];notice('');save();render();$('#arena').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}
+  try{const rosters=[0,1].map(s=>{try{const names=parseRoster($('#roster'+s).value);if(!validBox(names))throw Error('请选择 15 名绝品或典藏英灵');return names;}catch(e){$('#edit-box'+s).focus();throw Error(labels[s]+'：'+e.message);}});match=createMatch(rosters,crypto.getRandomValues(new Uint32Array(1))[0]%2);selected=[];notice('');save();render();$('#arena').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}
 });
 $('#boards').addEventListener('click',event=>{
   const button=event.target.closest('button[data-index]');if(!button||button.disabled)return;
@@ -83,4 +92,4 @@ $('#copy').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(text);notice('BP 记录已复制。');}catch{const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='天地劫-BP记录.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('剪贴板不可用，已改为下载 BP 记录。');}
 });
 
-for(const s of [0,1])$('#preset'+s).addEventListener('click',()=>{$('#roster'+s).value=videoRoster.join('\n');updateCounts();save();notice(labels[s]+'已载入视频左侧盒子。');});
+for(const s of [0,1])$('#preset'+s).addEventListener('click',()=>{$('#roster'+s).value=videoRoster.join('\n');updateCounts();save();notice(labels[s]+'已载入默认盒子。');});
