@@ -34,7 +34,7 @@
   .drafting .site-header,.drafting main,.drafting footer{max-width:none}.drafting main{padding:0 10px}.drafting .site-header{padding:5px 12px}.drafting .seal{width:25px;height:27px;font-size:19px}.drafting .brand{font-size:15px}.drafting #arena{padding-top:6px}.drafting .command{padding:7px 10px;margin-bottom:7px;min-height:67px}.drafting .command h2{font-size:16px}.drafting .board{padding:9px;margin-bottom:7px}.drafting .boards{gap:8px}.board-content{grid-template-columns:minmax(180px,.95fr) minmax(0,1.05fr);gap:9px}.board-content .roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(5,82px);gap:4px}.board-content .formations{margin:0;padding:0 0 0 8px;border-top:0;border-left:1px solid var(--line);min-width:0}.drafting .board-title{height:25px;margin-bottom:5px}.drafting .lineup{margin-bottom:7px}.drafting .bottom-bar{margin-bottom:6px}.drafting .history{padding:7px 10px}.drafting .rulebook{padding:7px 10px;margin-top:6px;margin-bottom:6px}.drafting footer{padding:6px 12px}
 }
 @media(min-width:1200px){.board-content{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.formation-card>summary{height:31px;min-height:31px}.formation-list{gap:3px}.formation-name{font-size:12px}.formation-card .formation-reason{font-size:10px}.formation-counts>span{font-size:10px;padding:2px 5px}}
-@media(min-width:850px) and (max-width:1100px){.formation-card>summary{gap:3px}.formation-owner{display:none}.formation-name{font-size:10px}.formation-inline-needed .portrait{width:17px;height:17px;flex-basis:17px}.formation-counts>span{font-size:8px;padding:2px}.formation-mode{font-size:8px}}
+@media(min-width:850px) and (max-width:1100px){.formation-card>summary{gap:3px}.formation-owner{display:block;flex:0 0 20px}.formation-owner>.portrait{width:20px;height:20px}.formation-name{font-size:10px}.formation-inline-needed .portrait{width:17px;height:17px;flex-basis:17px}.formation-counts>span{font-size:8px;padding:2px}.formation-mode{font-size:8px}}
 @media(min-width:850px){.formation-card>summary{height:30px;min-height:30px}.formation-counts{margin:4px 0 5px}.formation-list{gap:2px}}
 
 /* Separate unavailable formations without changing row height. */
@@ -51,7 +51,7 @@
   .board-content>.formations{grid-row:2/4;grid-column:1;border-left:0;border-right:1px solid var(--line);padding:0 9px 0 0}
   .side-1>.lineup,.side-1 .board-content>.roster-grid{grid-column:1}
   .side-1 .board-content>.formations{grid-column:2;border-right:0;border-left:1px solid var(--line);padding:0 0 0 9px}
-  .formation-card>summary{gap:3px}.formation-owner{display:none}.formation-name{font-size:10px}.formation-card .formation-reason{font-size:9px}.formation-counts>span{font-size:8px;padding:2px}.formation-inline-needed .portrait{width:17px;height:17px;flex-basis:17px}
+  .formation-card>summary{gap:3px}.formation-owner{display:block;flex:0 0 20px}.formation-owner>.portrait{width:20px;height:20px}.formation-name{font-size:10px}.formation-card .formation-reason{font-size:9px}.formation-counts>span{font-size:8px;padding:2px}.formation-inline-needed .portrait{width:17px;height:17px;flex-basis:17px}
 }
 @media(min-width:1200px){
   .drafting .board{grid-template-columns:minmax(215px,.65fr) minmax(0,1.35fr)}
@@ -59,3 +59,19 @@
   .formation-name{font-size:11px}.formation-counts>span{font-size:9px}.formation-card .formation-reason{font-size:10px}
   .drafting .hero strong{font-size:12px}.drafting .hero-meta{font-size:9px}
 }
+
+.formation-name{overflow:hidden;text-overflow:ellipsis}
+
+.formation-options{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.formation-options .portrait{width:28px;height:28px;flex-basis:28px;margin:0}
+
+.formation-option-groups{display:grid;gap:6px;margin-top:7px}.formation-option-row{display:flex;align-items:flex-start;gap:6px}.formation-option-label{flex:0 0 30px;font-size:10px;color:var(--gold);line-height:28px;overflow-wrap:anywhere}.formation-option-row .formation-options{margin:0;flex:1;min-width:0}
+
+.formation-inline-needed .formation-role-candidate{display:flex;flex-direction:column;gap:0;min-width:20px;max-width:26px}.formation-role-candidate small{display:block;max-width:26px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:8px;line-height:10px;color:var(--gold)}.formation-inline-needed .formation-role-candidate .portrait{width:16px;height:16px;flex-basis:16px}
+
+.formation-name{display:flex;align-items:center}.formation-title{min-width:0;overflow:hidden;text-overflow:ellipsis}.formation-available-count{flex-shrink:0;font-size:9px;color:var(--muted)}
+
+.formation-owner.leader-unpicked .portrait{filter:grayscale(1);opacity:.5}.formation-owner.leader-picked .portrait{filter:none;opacity:1}
+
+.formation-card .formation-info{width:max(100%,260px);max-width:calc(100vw - 40px);max-height:min(360px,65dvh);overflow-y:auto;right:auto}.side-1 .formation-card .formation-info{left:auto;right:0}.formation-info .formation-effect{margin:7px 0;padding:7px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:11px;line-height:1.65;color:var(--text);white-space:normal}
+
+.formation-role-selected{color:var(--jade);font-size:11px;line-height:28px}

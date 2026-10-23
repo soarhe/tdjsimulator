@@ -61,3 +61,35 @@ test('forecasts agree with exhaustive final-five lineups for representative form
     assert.equal(evaluate(formation,picks,available).state,expected,`${leader}: ${count} picks`);
   }
 });
+test('popup candidates include all viable unpicked supporters, excluding leader and banned heroes',()=>{
+  const r=evaluate(f('连环'),['连环'],['琴色','天音白菀','胧梦婳妖','明光剑圣'],['苏醒者']);
+  assert.deepEqual(r.candidates,['琴色','天音白菀','胧梦婳妖']);
+  const capped=evaluate(f('连环'),['连环','琴色','明光剑圣','李白'],['天音白菀','胧梦婳妖']);
+  assert.deepEqual(capped.candidates,['天音白菀','胧梦婳妖']);
+  const full=evaluate(f('连环'),['连环','琴色','天音白菀','明光剑圣','李白'],['胧梦婳妖']);
+  assert.deepEqual(full.candidates,[]);
+  assert.deepEqual(evaluate(f('连环'),[],['琴色','天音白菀'],['连环']).candidates,[]);
+});
+test('popup groups distinct supporting roles and merges identical requirements',()=>{
+  const r=evaluate(f('琴色'),[],['琴色','连环','尉迟慎','明光剑圣']);
+  assert.deepEqual(r.candidateGroups,[{label:'铁卫',candidates:['连环','尉迟慎'],satisfied:false},{label:'破军',candidates:['明光剑圣'],satisfied:false}]);
+  const same=evaluate(f('连环'),[],['连环','琴色','天音白菀','胧梦婳妖']);
+  assert.deepEqual(same.candidateGroups,[{label:'女',candidates:['琴色','天音白菀','胧梦婳妖'],satisfied:false}]);
+});
+test('one remaining supporter can fill two missing people only when the other is the leader',()=>{
+  const r=evaluate(f('诸葛亮'),['连环'],['诸葛亮','瑚儿']);
+  assert.equal(r.state,'possible');
+  assert.deepEqual(r.needed,['诸葛亮','瑚儿']);
+  assert.deepEqual(r.candidates,['瑚儿']);
+  assert.equal(evaluate(f('诸葛亮'),['诸葛亮'],['瑚儿']).state,'impossible');
+  assert.equal(evaluate(f('诸葛亮'),['连环','苏醒者','尉迟慎','明光剑圣'],['诸葛亮','瑚儿']).state,'impossible');
+});
+
+test('fulfilled support roles are selected; a repeated role requires both heroes',()=>{
+  const r=evaluate(f('瑚儿'),['瑚儿','魔宿霍雍'],['尉迟慎','剑心无邪']);
+  assert.equal(r.candidateGroups.find(g=>g.label==='斗将').satisfied,true);
+  assert.deepEqual(r.candidateGroups.find(g=>g.label==='斗将').candidates,[]);
+  assert.equal(r.candidateGroups.find(g=>g.label==='铁卫').satisfied,false);
+  assert.equal(evaluate(f('连环'),['连环','琴色'],['天音白菀']).candidateGroups[0].satisfied,false);
+  assert.equal(evaluate(f('连环'),['连环','琴色','天音白菀'],[]).candidateGroups[0].satisfied,true);
+});

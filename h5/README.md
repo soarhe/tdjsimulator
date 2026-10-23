@@ -69,3 +69,5 @@ python3 -m http.server 5173 --bind 127.0.0.1 --directory dist
 BP 战阵推演：根据 BWIKI 战阵列表收录 87 个由绝品／典藏英灵担任阵眼的战阵，仅展示当前盒子相关战阵。双方独立计算“已满足／仍可开启／无法开启”，待确认禁选会预演，确认、撤销和恢复进度后同步更新。配阵需不同英灵，已选英灵必须保留，并受最终 5 个上阵位限制；可补选头像是一种最少补选方案，并不保证后续不会被禁。按英灵图鉴的基础属性、职业、性别及阵眼身份判断开启条件，不模拟战中增益、技能变化或多个战阵同时生效。
 
 更新数据：保存 Wiki 的英灵图鉴及战阵列表 HTML，依次运行 `python3 scripts/import_bp_portraits.py collection.html`、`python3 scripts/import_bp_formations.py formations.html`（后者需要 beautifulsoup4）。每条战阵保留 Wiki 来源链接。
+
+战阵浮窗展示各阵独有特效，省略通用四维属性加成。特效来自每条战阵的 Wiki 来源页，运行 `python3 scripts/import_bp_formation_effects.py pages/` 可从缓存详情 HTML（或同名公开 API JSON）重新生成 `formation-effects.mjs`。

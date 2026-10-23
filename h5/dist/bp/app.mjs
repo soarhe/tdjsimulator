@@ -1,4 +1,4 @@
-import {analyzeFormations} from './formations.mjs';
+import {analyzeFormations} from './formations.mjs?v=20261023-selected-roles';
 import {videoRoster} from './heroes.mjs';
 import {catalog as heroes} from './catalog.mjs';
 import {createBoxEditor,validBox} from './box-editor.mjs';
@@ -27,6 +27,7 @@ for(const side of [0,1])$('#edit-box'+side).addEventListener('click',()=>boxEdit
 
 function description(m,step){return `${owner(m,sideForRole(m,step.actor))} ${step.type==='ban'?'禁用对方':'选择己方'} ${step.count} 名英灵`;}
 function formationPanel(side){
+  const conditionLabel=text=>text.replace(/炎[／/]冰[／/]雷/g,'下三色').replace(/光[／/]暗[／/]幽/g,'上三色');
   // Pending choices preview their consequences without writing draft history.
   const step=steps[match.history.length];
   const preview=!!(step&&selected.length&&sideForRole(match,step.target)===side);
@@ -35,8 +36,20 @@ function formationPanel(side){
   const results=analyzeFormations(projected,side).sort((a,b)=>Number(a.state==='impossible')-Number(b.state==='impossible')||match.rosters[side].indexOf(a.leader)-match.rosters[side].indexOf(b.leader));
   const names={ready:'已满足',possible:'仍可开启',impossible:'无法开启'};
   return `<div class="formations"><div class="formations-heading"><h3>战阵</h3><span class="formation-mode ${preview?'preview':''}">${preview?'待确认预演':'已确认局面'}</span></div><div class="formation-counts" aria-live="polite">${Object.entries(names).map(([state,label])=>`<span class="${state}" title="${label}">${label} <b>${results.filter(f=>f.state===state).length}</b></span>`).join('')}</div><div class="formation-list">${results.map((f,index)=>{
+    const missingLeader=f.needed.includes(f.leader);
+    const reason=f.reason+(missingLeader?'（含未上阵阵眼）':'');
+    const candidates=f.candidates??[];
+    const candidateGroups=(f.candidateGroups??(candidates.length?[{label:'可选',candidates}]:[])).map(group=>({...group,label:conditionLabel(group.label)}));
     const recommend=f.needed.length&&f.witness.some(n=>statusFor(projected,side,n)==='pick');
-    return `<details class="formation-card ${f.state} ${f.state==='impossible'&&results[index-1]?.state!=='impossible'?'impossible-start':''}" data-formation="${side}-${esc(f.name)}"><summary title="${esc(f.leader+'：'+f.reason)}"><span class="formation-owner">${portrait(f.leader)}</span><span class="formation-name">${esc(f.name)}</span><span class="formation-reason">${f.state==='possible'?`缺 ${f.needed.length} 人`:names[f.state]}</span><span class="formation-inline-needed">${recommend?f.needed.map(n=>`<span class="formation-candidate" role="img" aria-label="${esc(n)}" title="${esc(n)}">${portrait(n)}</span>`).join(''):''}</span></summary><div class="formation-info"><p>${esc(f.leader)} · ${esc(f.reason)}</p><p class="formation-condition">${esc(f.condition)} · <a href="${esc(f.source)}" target="_blank" rel="noopener noreferrer">Wiki ↗</a></p></div></details>`;
+    const inlineCandidates=[];
+    const addCandidate=(group)=>{
+      const name=group.candidates.find(n=>n!==f.leader&&!inlineCandidates.some(c=>c.name===n));
+      if(name&&inlineCandidates.length<2)inlineCandidates.push({name,label:group.label});
+    };
+    // Give each distinct supporting role a place before filling a second alternative.
+    candidateGroups.forEach(addCandidate);
+    candidateGroups.forEach(addCandidate);
+    return `<details class="formation-card ${f.state} ${f.state==='impossible'&&results[index-1]?.state!=='impossible'?'impossible-start':''}" data-formation="${side}-${esc(f.name)}"><summary title="${esc(f.name+' · '+f.leader+'：'+reason)}"><span class="formation-owner ${statusFor(projected,side,f.leader)==='pick'?'leader-picked':'leader-unpicked'}" role="img" aria-label="阵眼：${esc(f.leader)}" title="${esc(f.leader)}">${portrait(f.leader)}</span><span class="formation-name"><span class="formation-title">${esc(f.name)}</span><span class="formation-available-count" title="仍可选的非阵眼角色数">（${new Set(candidates.filter(n=>n!==f.leader)).size}）</span></span><span class="formation-reason">${f.state==='possible'?`缺 ${f.needed.length} 人`:names[f.state]}</span><span class="formation-inline-needed">${recommend?inlineCandidates.map(({name,label})=>`<span class="formation-candidate formation-role-candidate" role="img" aria-label="${esc(label+'候选：'+name)}" title="${esc(label+'：'+name)}">${portrait(name)}<small>${esc(label)}</small></span>`).join(''):''}</span></summary><div class="formation-info"><p>${esc(f.leader)} · ${esc(reason)}</p><p class="formation-condition">${esc(conditionLabel(f.condition))} · <a href="${esc(f.source)}" target="_blank" rel="noopener noreferrer">Wiki ↗</a></p>${f.effect?`<p class="formation-effect">${esc(f.effect)}</p>`:''}<div class="formation-option-groups" role="group" aria-label="仍可选的配阵英灵">${candidateGroups.length?candidateGroups.map(group=>`<div class="formation-option-row"><span class="formation-option-label">${esc(group.label)}</span><div class="formation-options">${group.satisfied?'<span class="formation-role-selected">已选</span>':group.candidates.length?group.candidates.map(n=>`<span class="formation-candidate" role="img" aria-label="${esc(n)}" title="${esc(n)}">${portrait(n)}</span>`).join(''):'<span class="muted">无可选英灵</span>'}</div></div>`).join(''):'<span class="muted">暂无可补选的配阵英灵</span>'}</div></div></details>`;
   }).join('')||'<p class="muted">盒子中暂无战阵。</p>'}</div></div>`;
 
 }
