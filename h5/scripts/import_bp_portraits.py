@@ -45,7 +45,7 @@ def main():
     groups = [json.loads(html.unescape(value)) for value in re.findall(r'class="HeroSelect filtr-item" data-groups="([^"]+)"', document)]
     if not groups or any(len(row) < 5 for row in groups):
         raise ValueError('Missing hero quality metadata')
-    catalog = [dict(name=row[0], quality=row[1], element=row[4], job=row[3]) for row in groups]
+    catalog = [dict(name=row[0], quality=row[1], gender=row[2], element=row[4], job=row[3]) for row in groups]
     (DEST / 'catalog.mjs').write_text('// Source: ' + SOURCE + '\nexport const catalog = ' + json.dumps(catalog, ensure_ascii=False, indent=2) + ';\n')
     print(f'Imported {len(portraits)} portraits')
 
