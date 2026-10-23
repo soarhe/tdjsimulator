@@ -1,11 +1,13 @@
+import {setupFloatingCommand} from './floating-command.mjs';
 import {analyzeFormations} from './formations.mjs?v=20261023-selected-roles';
 import {videoRoster} from './heroes.mjs';
 import {catalog as heroes} from './catalog.mjs';
-import {createBoxEditor,validBox} from './box-editor.mjs';
+import {createBoxEditor,validBox} from './box-editor.mjs?v=20261023-editor-selection-sync';
 import {portraits} from './portraits.mjs';
 import {steps,parseRoster,createMatch,sideForRole,statusFor,applyMove} from './rules.mjs';
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels=['甲方','乙方'], key='tdj-bp-v1';
+const updateFloatingCommand=setupFloatingCommand();
 let match=null,selected=[];
 const roleName=(m,s)=>m.first===s?'先手':'后手';
 const owner=(m,s)=>`${labels[s]} · ${roleName(m,s)}`;
@@ -57,6 +59,7 @@ function render(){
   const pagePosition={left:window.scrollX,top:window.scrollY};
   document.body.classList.toggle('drafting',!!match);
   $('#setup').hidden=!!match;$('#arena').hidden=!match;
+  updateFloatingCommand();
   if(!match)return;
   const index=match.history.length,step=steps[index];
   $('#step-label').textContent=step?`STEP ${String(index+1).padStart(2,'0')} / 16 · ${step.type==='ban'?'BAN 禁用':'PICK 上阵'}`:'DRAFT COMPLETE / 推演完成';
