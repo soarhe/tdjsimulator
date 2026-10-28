@@ -13,3 +13,12 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# Android local tools and build output.
+android/.gradle/
+android/**/build/
+android/local.properties
+android/releases/
+*.jks
+*.keystore
+android/wiki-reference/

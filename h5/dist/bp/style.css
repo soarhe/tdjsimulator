@@ -110,3 +110,6 @@
   .drafting .formation-role-candidate small{max-width:22px;font-size:7px}
   .drafting .formation-card .formation-info{left:auto;right:0;width:260px;max-width:calc(100vw - 32px)}
 }
+
+.start-actions{display:flex;gap:8px;flex-shrink:0}.start-actions button{flex:1}
+@media(max-width:700px){.start-actions{width:100%}.start-actions button{padding:10px 8px;font-size:12px}}

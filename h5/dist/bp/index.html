@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b20"><meta name="description" content="天地劫 BP 模拟：15 人阵容，随机先后手，完整 16 步禁选"><title>天地劫 · 阵前推演</title><link rel="stylesheet" href="style.css?v=20261023-mobile-columns"><script type="module" src="app.mjs?v=20261023-editor-selection-sync"></script><link rel="icon" href="data:,"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b20"><meta name="description" content="天地劫 BP 模拟：15 人阵容，自选先后手，完整 16 步禁选"><title>天地劫 · 阵前推演</title><link rel="stylesheet" href="style.css?v=20261024-first-player"><script type="module" src="app.mjs?v=20261024-first-player"></script><link rel="icon" href="data:,"></head>
 <body>
 <header class="site-header"><a class="brand" href="./"><span class="seal">劫</span><span>天地劫<small>阵前推演 · BP 模拟</small></span></a><a class="back" href="../">伤害演算 ↗</a></header>
 <main>
@@ -9,17 +9,17 @@
 <div class="section-title"><div><p class="eyebrow">01 / PREPARATION</p><h2>配置双方阵容</h2></div><span class="chip">同屏双人 · 本地模拟</span></div>
 <p class="muted">双方使用默认盒子。点击“编辑盒子”，通过头像调整各自的 15 人阵容。</p>
 <div class="setup-grid"><section class="box-preview"><div class="box-heading"><h3>甲方 · 盒子</h3><span id="count0"></span></div><input type="hidden" id="roster0"><div id="box-preview0" class="box-portraits"></div><div class="box-actions"><button type="button" id="edit-box0" class="primary">编辑盒子</button><button type="button" id="preset0" class="subtle">恢复默认盒子</button></div></section><section class="box-preview"><div class="box-heading"><h3>乙方 · 盒子</h3><span id="count1"></span></div><input type="hidden" id="roster1"><div id="box-preview1" class="box-portraits"></div><div class="box-actions"><button type="button" id="edit-box1" class="primary">编辑盒子</button><button type="button" id="preset1" class="subtle">恢复默认盒子</button></div></section></div>
-<div class="setup-actions"><p id="setup-help" class="muted">双方使用默认的 15 人盒子，可分别修改。</p><button id="start" class="primary">随机先后手 · 开始推演 <span>→</span></button></div>
+<div class="setup-actions"><p id="setup-help" class="muted">双方使用默认的 15 人盒子，可分别修改。</p><div class="start-actions"><button id="start-first" data-first="0" class="primary">甲方先手 · 开始</button><button id="start-second" data-first="1" class="primary">甲方后手 · 开始</button></div></div>
 </section>
 <section id="arena" hidden>
-<div class="command-anchor"><div class="command panel"><div><p id="step-label" class="eyebrow"></p><h2 id="instruction"></h2><p id="selection-note" class="muted"></p></div><div class="command-actions"><button id="undo" class="subtle">撤销上一步</button><button id="confirm" class="primary">确认选择</button></div><div class="progress"><div id="progress-fill"></div></div></div>
+<div class="command-anchor"><div class="command panel"><div><p id="step-label" class="eyebrow"></p><h2 id="instruction"></h2><p id="selection-note" class="muted"></p></div><div class="command-actions"><button id="undo" class="subtle">撤销上一步</button><button id="redo" class="subtle" disabled>恢复下一步</button><button id="confirm" class="primary">确认选择</button></div><div class="progress"><div id="progress-fill"></div></div></div>
 </div>
 <div id="boards" class="boards"></div>
 <div class="bottom-bar"><span id="assignment" class="muted"></span><div><button id="copy" class="subtle">复制 BP 记录</button><button id="restart" class="subtle">重新配置</button></div></div>
 <details class="panel history"><summary>禁选记录 <span id="history-count"></span></summary><ol id="history"></ol></details>
 </section>
 <p id="notice" role="status" aria-live="polite"></p>
-<details class="panel rulebook"><summary>本局规则 <span>15 人 · 6 禁 · 5 选</span></summary><p>随机分配先后手，先手先禁，后手先选。已禁用与已上阵的英灵不能再次禁选。每方最终上阵 5 名，禁用 6 名，剩余 4 名。</p><ol id="rules"></ol><p class="muted">不包含计时、援战与联网对战。确认后可撤销；刷新页面保留当前进度（浏览器允许本地存储时）。</p></details>
+<details class="panel rulebook"><summary>本局规则 <span>15 人 · 6 禁 · 5 选</span></summary><p>开始前选择甲方先手或后手，先手先禁，后手先选。已禁用与已上阵的英灵不能再次禁选。每方最终上阵 5 名，禁用 6 名，剩余 4 名。</p><ol id="rules"></ol><p class="muted">不包含计时、援战与联网对战。确认后可撤销；刷新页面保留当前进度（浏览器允许本地存储时）。</p></details>
 </main><footer><span>天地劫 · 阵前推演</span><a href="https://wiki.biligame.com/tdj/%E8%8B%B1%E7%81%B5%E5%9B%BE%E9%89%B4" target="_blank" rel="noopener noreferrer">英灵头像来源：天地劫 BWIKI ↗</a></footer>
 <dialog id="reset-dialog"><h2>返回阵容配置？</h2><p>将清空本局禁选记录，保留双方阵容。</p><form method="dialog"><button value="cancel" class="subtle">继续本局</button><button value="reset" class="primary">重新配置</button></form></dialog>
 <dialog id="box-editor" aria-labelledby="editor-title">

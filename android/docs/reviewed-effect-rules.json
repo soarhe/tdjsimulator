@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "note": "人工拆解与实现覆盖；partial 不能作为完整可施放技能。通用原语实现不等于角色技能、装备、反应及行动结束全部接入。",
+  "rules": [
+    {
+      "id": "绝学/气愈之术",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/绝学/气愈之术",
+      "targeting": {
+        "range": 2,
+        "shape": "single"
+      },
+      "orderSource": "用户确认：按技能描述先治疗后驱散；不同技能不可统一顺序",
+      "effects": [
+        {
+          "id": "heal",
+          "kind": "heal",
+          "base": "caster.magicalAttack",
+          "coefficient": 1.5,
+          "primitive": "applyHealingPacket",
+          "coverage": "finalized_packet_only"
+        },
+        {
+          "id": "dispel",
+          "kind": "dispel",
+          "category": "有害",
+          "count": 1,
+          "primitive": "applyDispelPacket",
+          "coverage": "explicit_selection_branch"
+        }
+      ],
+      "remaining": [
+        "healing_modifiers_and_rounding",
+        "random_selection_probability_weights",
+        "hero_equipment_reactions",
+        "cast_restriction_rules"
+      ],
+      "castAdapter": "createQiYuRule",
+      "implementedFlow": [
+        "loadout_and_variant_check",
+        "range_and_target_check",
+        "explicit_cooldown_check",
+        "heal_then_dispel",
+        "atomic_action_end_and_handoff"
+      ]
+    },
+    {
+      "id": "绝学/神气流转",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/绝学/神气流转",
+      "targeting": {
+        "range": 3,
+        "shape": "diamond",
+        "radius": 2,
+        "side": "friendly"
+      },
+      "orderSource": "用户确认：治疗与驱散按各技能描述顺序；多目标跨单位结算顺序仍需依据",
+      "effects": [
+        {
+          "id": "heal",
+          "kind": "heal",
+          "base": "caster.magicalAttack",
+          "coefficient": 0.75,
+          "primitive": "applyHealingPacket",
+          "coverage": "finalized_packet_only"
+        },
+        {
+          "id": "dispel",
+          "kind": "dispel",
+          "category": "有害",
+          "count": 1,
+          "primitive": "applyDispelPacket",
+          "coverage": "explicit_selection_branch"
+        }
+      ],
+      "remaining": [
+        "legal_cast_and_target_validation",
+        "healing_modifiers_and_rounding",
+        "random_selection_probability_weights",
+        "multi_target_reaction_order",
+        "hero_equipment_reactions",
+        "action_lifecycle"
+      ]
+    },
+    {
+      "id": "状态/疫瘴",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/疫瘴",
+      "revision": 18680,
+      "category": "其他",
+      "dispellable": false,
+      "maxStacks": 3,
+      "effects": [
+        {
+          "id": "protect-dispel",
+          "kind": "dispelProtection",
+          "category": "有害",
+          "primitive": "applyDispelPacket",
+          "coverage": "single_protection_source",
+          "description": "每层保护一个可驱散有害状态并消耗对应层数；没有可驱散对象不消耗"
+        }
+      ],
+      "remaining": [
+        "application_and_refresh_policy",
+        "duration",
+        "multiple_protection_sources"
+      ]
+    },
+    {
+      "id": "状态/神睿I",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/神睿I",
+      "effects": [
+        {
+          "id": "status-application",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_immunity_timing_and_stacking_only",
+          "panelFields": [
+            "physicalAttack",
+            "magicalAttack"
+          ]
+        }
+      ],
+      "implementedFlow": [
+        "application_with_explicit_policies",
+        "panel_invalidation_on_apply_dispel_expiry"
+      ],
+      "remaining": [
+        "stat_recomputation",
+        "refresh_and_source_merge_policy",
+        "immunity_rules",
+        "application_timing"
+      ]
+    },
+    {
+      "id": "状态/披甲I",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/披甲I",
+      "effects": [
+        {
+          "id": "status-application",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_immunity_timing_and_stacking_only",
+          "panelFields": [
+            "physicalDefense"
+          ]
+        }
+      ],
+      "implementedFlow": [
+        "application_with_explicit_policies",
+        "panel_invalidation_on_apply_dispel_expiry"
+      ],
+      "remaining": [
+        "stat_recomputation",
+        "refresh_and_source_merge_policy",
+        "immunity_rules",
+        "application_timing"
+      ]
+    },
+    {
+      "id": "状态/封咒",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/封咒",
+      "effects": [
+        {
+          "id": "status-application",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_immunity_timing_and_stacking_only",
+          "panelFields": []
+        }
+      ],
+      "implementedFlow": [
+        "application_with_explicit_policies",
+        "blocks_qiyu_active_cast"
+      ],
+      "remaining": [
+        "immunity_rules",
+        "refresh_and_source_merge_policy",
+        "application_timing",
+        "other_active_skills"
+      ]
+    },
+    {
+      "id": "天赋/云岫育灵",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/天赋/云岫育灵",
+      "effects": [
+        {
+          "id": "guard-range",
+          "kind": "guard",
+          "primitive": "lianHuanGuardGrant",
+          "coverage": "reviewed_3_to_6_star_guard_component_only"
+        }
+      ],
+      "implementedFlow": [
+        "base_two_tile_guard",
+        "two_other_friends_in_three_tiles_add_one_guard_range",
+        "summons_count_as_friends",
+        "slow_blocks_guard",
+        "nearest_then_bp_pick_priority"
+      ],
+      "remaining": [
+        "mitigation_and_magic_defense",
+        "field_and_cleanse_after_skill",
+        "extra_movement",
+        "death_prevention",
+        "talent_availability_reactions"
+      ]
+    },
+    {
+      "id": "状态/迟缓I",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/迟缓I",
+      "effects": [
+        {
+          "id": "movement",
+          "kind": "movement",
+          "primitive": "resolveMovementBudget",
+          "coverage": "baseline_minus_one_or_use_current_panel"
+        },
+        {
+          "id": "guard-block",
+          "kind": "guard",
+          "primitive": "hasGuardBlockingSlow",
+          "coverage": "guard_selection_before_precombat"
+        }
+      ],
+      "remaining": [
+        "status_application_timing_and_immunity",
+        "conditional_movement_exceptions"
+      ]
+    },
+    {
+      "id": "状态/迟缓II",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/状态/迟缓II",
+      "effects": [
+        {
+          "id": "movement",
+          "kind": "movement",
+          "primitive": "resolveMovementBudget",
+          "coverage": "baseline_minus_two_or_use_current_panel"
+        },
+        {
+          "id": "guard-block",
+          "kind": "guard",
+          "primitive": "hasGuardBlockingSlow",
+          "coverage": "guard_selection_before_precombat"
+        }
+      ],
+      "remaining": [
+        "status_application_timing_and_immunity",
+        "conditional_movement_exceptions"
+      ]
+    },
+    {
+      "id": "绝学/剑指天南·横",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/%E7%BB%9D%E5%AD%A6/%E5%89%91%E6%8C%87%E5%A4%A9%E5%8D%97%C2%B7%E6%A8%AA",
+      "castAdapter": "createSwordHorizontalRule",
+      "effects": [
+        {
+          "id": "primary-damage",
+          "kind": "damage",
+          "primitive": "applyDamagePacket",
+          "coverage": "externally_finalized_damage_packet_only"
+        },
+        {
+          "id": "seal",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_timing_stacking_immunity_handlers"
+        },
+        {
+          "id": "field-removal",
+          "kind": "field",
+          "primitive": "clearEnemyFields",
+          "coverage": "enemy_terrain_and_objects_in_target_one_ring_domains_preserved"
+        }
+      ],
+      "implementedFlow": [
+        "actual_loadout_variant_range_check",
+        "one_or_two_targets",
+        "no_combat_or_guard",
+        "new_cooldown_skips_cast_action_end",
+        "all_primary_damage_before_debuffs",
+        "atomic_action_end"
+      ],
+      "remaining": [
+        "damage_modifiers_critical_and_rounding",
+        "hero_equipment_reactions",
+        "seal_first_tick_and_refresh_policy",
+        "conditional_target_restrictions",
+        "field_removal_reactions"
+      ]
+    },
+    {
+      "id": "绝学/剑指天南·横·壹式",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/%E7%BB%9D%E5%AD%A6/%E5%89%91%E6%8C%87%E5%A4%A9%E5%8D%97%C2%B7%E6%A8%AA%C2%B7%E5%A3%B9%E5%BC%8F",
+      "castAdapter": "createSwordHorizontalRule",
+      "effects": [
+        {
+          "id": "primary-damage",
+          "kind": "damage",
+          "primitive": "applyDamagePacket",
+          "coverage": "externally_finalized_damage_packet_only"
+        },
+        {
+          "id": "seal",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_timing_stacking_immunity_handlers"
+        },
+        {
+          "id": "field-removal",
+          "kind": "field",
+          "primitive": "clearEnemyFields",
+          "coverage": "enemy_terrain_and_objects_in_target_one_ring_domains_preserved"
+        }
+      ],
+      "implementedFlow": [
+        "actual_loadout_variant_range_check",
+        "one_or_two_targets",
+        "no_combat_or_guard",
+        "new_cooldown_skips_cast_action_end",
+        "all_primary_damage_before_debuffs",
+        "atomic_action_end"
+      ],
+      "remaining": [
+        "damage_modifiers_critical_and_rounding",
+        "hero_equipment_reactions",
+        "seal_first_tick_and_refresh_policy",
+        "conditional_target_restrictions",
+        "field_removal_reactions"
+      ]
+    },
+    {
+      "id": "绝学/剑指天南·横·贰式",
+      "status": "partial",
+      "source": "https://wiki.biligame.com/tdj/%E7%BB%9D%E5%AD%A6/%E5%89%91%E6%8C%87%E5%A4%A9%E5%8D%97%C2%B7%E6%A8%AA%C2%B7%E8%B4%B0%E5%BC%8F",
+      "castAdapter": "createSwordHorizontalRule",
+      "effects": [
+        {
+          "id": "primary-damage",
+          "kind": "damage",
+          "primitive": "applyDamagePacket",
+          "coverage": "externally_finalized_damage_packet_only"
+        },
+        {
+          "id": "seal",
+          "kind": "status",
+          "primitive": "applyStatusPacket",
+          "coverage": "explicit_timing_stacking_immunity_handlers"
+        },
+        {
+          "id": "field-removal",
+          "kind": "field",
+          "primitive": "clearEnemyFields",
+          "coverage": "enemy_terrain_and_objects_in_target_one_ring_domains_preserved"
+        }
+      ],
+      "implementedFlow": [
+        "actual_loadout_variant_range_check",
+        "one_or_two_targets",
+        "no_combat_or_guard",
+        "new_cooldown_skips_cast_action_end",
+        "all_primary_damage_before_debuffs",
+        "atomic_action_end"
+      ],
+      "remaining": [
+        "damage_modifiers_critical_and_rounding",
+        "hero_equipment_reactions",
+        "seal_first_tick_and_refresh_policy",
+        "conditional_target_restrictions",
+        "field_removal_reactions",
+        "shuyuan_followup_required_handler"
+      ]
+    },
+    {
+      "id": "状态/竭光",
+      "status": "partial",
+      "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验",
+      "effects": [
+        {
+          "id": "three-stack-restriction",
+          "kind": "restriction",
+          "primitive": "validateActiveSkill",
+          "coverage": "sword_horizontal_active_skill"
+        },
+        {
+          "id": "owner-end-removal",
+          "kind": "status",
+          "primitive": "JIEGUANG_END_RULE",
+          "coverage": "remove_at_three_stacks_on_own_operation_end"
+        }
+      ],
+      "remaining": [
+        "application_stacking_duration",
+        "other_damage_skills_integration"
+      ]
+    }
+  ]
+}

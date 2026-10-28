@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "warning": "仅列已接入执行接口的套装子效果；不代表整套装备的属性、其他触发、概率与冷却均已实现。",
+  "effects": [
+    {
+      "id": "set:鸿宇天石:2:pushPull",
+      "source": "https://wiki.biligame.com/tdj/天石云佩",
+      "confirmedByUser": true,
+      "scope": "两件套免疫推拉",
+      "implementation": "bindEquipment -> applyForcedMovementDraft",
+      "status": "partial",
+      "remaining": [
+        "具体技能完整施放与方向确定",
+        "场地位移反应",
+        "其他套装效果"
+      ]
+    },
+    {
+      "id": "set:灵脉化魄:2:sealImmunity",
+      "source": "https://wiki.biligame.com/tdj/化魄法令",
+      "scope": "两件套免疫封咒",
+      "implementation": "equipmentStatusImmunityResolver -> applyStatusPacket",
+      "status": "partial",
+      "remaining": [
+        "其他状态免疫",
+        "同套装随机减益效果",
+        "三件套免伤法攻冷却效果"
+      ]
+    }
+  ]
+}
