@@ -1,0 +1,28 @@
+{
+  "status": "awaiting_real_observations",
+  "skill": "绝学/气愈之术",
+  "warning": "以下为采样字段模板，不是已发生的实测。面板法攻用客户端当前值；配置中的治疗效果不重复计入法攻。",
+  "plannedCases": [
+    {"id": "baseline", "purpose": "双方无治疗修正，确认倍率与基本取整；需排除天赋神兵装备的隐藏修正"},
+    {"id": "outgoing-only", "purpose": "仅施术者有明确治疗加成，记录所有条件是否生效"},
+    {"id": "incoming-only", "purpose": "仅受术者有明确受治疗加成"},
+    {"id": "both", "purpose": "两类加成都生效，用于区分相加和相乘；两者之一为0时无法区分"},
+    {"id": "fractional", "purpose": "变更法攻，使若干候选取整方式的预测结果不同后再采样"}
+  ],
+  "samples": [
+    {
+      "id": "baseline-pending",
+      "sourceRef": null,
+      "completeModifierAudit": false,
+      "noConcurrentHpEffects": false,
+      "magicalAttack": null,
+      "coefficient": 1.5,
+      "outgoingBonus": null,
+      "incomingBonus": null,
+      "hpBefore": null,
+      "hpAfter": null,
+      "recoveryCap": null,
+      "notes": "治疗前后都需绝对气血；治疗后必须仍未到恢复上限，否则差值只代表实际回血，无法辨认总治疗量。记录双方全部状态和已知配置。"
+    }
+  ]
+}

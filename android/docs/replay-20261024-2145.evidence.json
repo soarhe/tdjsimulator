@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "id": "replay-20261024-2145",
+  "units": [
+    {
+      "id": "ally-sword",
+      "side": "ally",
+      "heroId": "明光剑圣"
+    },
+    {
+      "id": "ally-qinse",
+      "side": "ally",
+      "heroId": "琴色"
+    },
+    {
+      "id": "ally-yu",
+      "side": "ally",
+      "heroId": "妖佑宇韶容"
+    },
+    {
+      "id": "ally-sang",
+      "side": "ally",
+      "heroId": "桑然"
+    },
+    {
+      "id": "ally-bai",
+      "side": "ally",
+      "heroId": "天音白菀"
+    },
+    {
+      "id": "enemy-huoyong",
+      "side": "enemy",
+      "heroId": "魔宿霍雍"
+    },
+    {
+      "id": "enemy-sword",
+      "side": "enemy",
+      "heroId": "明光剑圣"
+    },
+    {
+      "id": "enemy-lu",
+      "side": "enemy",
+      "heroId": "幽姬鹿昭依"
+    },
+    {
+      "id": "enemy-wuxie",
+      "side": "enemy",
+      "heroId": "剑心无邪"
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "round3-before-first-action",
+      "source": "android/docs/replay-20261024-2145.md#第一个建议案例",
+      "rosterComplete": false,
+      "notes": [
+        "整理自暂停点笔记，尚无逐帧截图定位；九名已识别角色不代表完整阵容。",
+        "无冷却数字只记录视觉现象，不直接认定CD0；壹/贰技能版本待读。"
+      ],
+      "observations": [
+        {
+          "path": "round",
+          "value": 3,
+          "source": "android/docs/replay-20261024-2145.md#第一个建议案例"
+        },
+        {
+          "path": "actingSide",
+          "value": "ally",
+          "source": "android/docs/replay-20261024-2145.md#第一个建议案例"
+        },
+        {
+          "unitId": "ally-sword",
+          "panel": {
+            "hp": 17697,
+            "maxHp": 17697,
+            "physicalAttack": 9291,
+            "magicalAttack": 637,
+            "physicalDefense": 2936,
+            "magicalDefense": 2260,
+            "critStat": 251
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-sword.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "ally-qinse",
+          "panel": {
+            "hp": 17901,
+            "maxHp": 17901,
+            "physicalAttack": 445,
+            "magicalAttack": 4635,
+            "physicalDefense": 2253,
+            "magicalDefense": 3278,
+            "critStat": 150
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-qinse.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "ally-yu",
+          "panel": {
+            "hp": 16003,
+            "maxHp": 16003,
+            "physicalAttack": 461,
+            "magicalAttack": 6407,
+            "physicalDefense": 1847,
+            "magicalDefense": 2441,
+            "critStat": 148
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-yu.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "ally-sang",
+          "panel": {
+            "hp": 23540,
+            "maxHp": 23540,
+            "physicalAttack": 3930,
+            "magicalAttack": 1528,
+            "physicalDefense": 3065,
+            "magicalDefense": 2543,
+            "critStat": 157
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-sang.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "ally-bai",
+          "panel": {
+            "hp": 17397,
+            "maxHp": 17397,
+            "magicalAttack": 5329,
+            "physicalDefense": 2528,
+            "magicalDefense": 2731,
+            "critStat": 140
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-bai.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "enemy-huoyong",
+          "panel": {
+            "hp": 15337,
+            "maxHp": 15337,
+            "physicalAttack": 501,
+            "magicalAttack": 7687,
+            "physicalDefense": 2075,
+            "magicalDefense": 2048,
+            "critStat": 193
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.enemy-huoyong.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "enemy-sword",
+          "panel": {
+            "physicalAttack": 9107,
+            "magicalAttack": 658,
+            "physicalDefense": 2759,
+            "magicalDefense": 2193,
+            "critStat": 260
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.enemy-sword.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "enemy-lu",
+          "panel": {
+            "hp": 29763,
+            "maxHp": 29763,
+            "physicalAttack": 6820,
+            "magicalAttack": 608,
+            "physicalDefense": 2401,
+            "magicalDefense": 1886,
+            "critStat": 144
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.enemy-lu.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "unitId": "enemy-wuxie",
+          "panel": {
+            "hp": 20868,
+            "maxHp": 20868,
+            "physicalAttack": 7552,
+            "magicalAttack": 689,
+            "physicalDefense": 2540,
+            "magicalDefense": 2095,
+            "critStat": 156
+          },
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.enemy-wuxie.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#第三回合首动前"
+        },
+        {
+          "path": "units.ally-yu.shield",
+          "value": 2446,
+          "source": "android/docs/replay-20261024-2145.md#第三回合继续读取与回放前判断"
+        },
+        {
+          "path": "units.enemy-huoyong.shield",
+          "value": 15337,
+          "source": "android/docs/replay-20261024-2145.md#直接读到的关键数据"
+        }
+      ],
+      "partialObservations": [
+        {
+          "unitId": "ally-sword",
+          "field": "statuses",
+          "value": "竭光2层，其他状态未齐；不能导入为完整列表",
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "unitId": "ally-yu",
+          "field": "statuses",
+          "value": "竭光1层、妖佑2层；其他状态未齐",
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "unitId": "ally-sword",
+          "field": "skills",
+          "value": "剑指天南·横射程4，无冷却数字；壹式/贰式未确定",
+          "source": "android/docs/replay-20261024-2145.md#直接读到的关键数据"
+        }
+      ]
+    },
+    {
+      "id": "round3-after-enemy-sword",
+      "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验",
+      "rosterComplete": false,
+      "notes": [
+        "不是首动前；仅保存这个暂停点再次确认的数值。未观察字段不继承。",
+        "气血/护盾净变化不等于技能总伤害，不用其倒推伤害公式。"
+      ],
+      "observations": [
+        {
+          "path": "round",
+          "value": 3,
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "unitId": "ally-yu",
+          "panel": {
+            "hp": 8818,
+            "maxHp": 16003
+          },
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "path": "units.ally-yu.shield",
+          "value": 1250,
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "path": "units.ally-yu.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "unitId": "enemy-sword",
+          "panel": {
+            "hp": 18496,
+            "maxHp": 18496
+          },
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        },
+        {
+          "path": "units.enemy-sword.alive",
+          "value": true,
+          "source": "android/docs/replay-20261024-2145.md#首次交替行动的核验"
+        }
+      ]
+    }
+  ]
+}

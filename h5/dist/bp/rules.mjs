@@ -17,7 +17,7 @@ export function createMatch(rosters,first=0) {
   if(first!==0&&first!==1) throw Error('无效的先手方');
   rosters.forEach(r=>parseRoster(r.join('\n')));
   if(rosters.length!==2) throw Error('需要双方阵容');
-  return {rosters:rosters.map(r=>[...r]),first,history:[]};
+  return {rosters:rosters.map(r=>[...r]),first,history:[],future:[]};
 }
 export function sideForRole(match,role) {return role===0?match.first:1-match.first;}
 export function statusFor(match,side,name) {
@@ -30,5 +30,15 @@ export function applyMove(match,names) {
   const side=sideForRole(match,step.target);
   if(names.length!==step.count||new Set(names).size!==names.length) throw Error(`请选择 ${step.count} 名不同英灵`);
   if(names.some(n=>!match.rosters[side].includes(n)||statusFor(match,side,n)!=='available')) throw Error('不能选择已上阵、已禁用或不在该方阵容中的英灵');
-  return {...match,history:[...match.history,{side,type:step.type,names:[...names]}]};
+  return {...match,history:[...match.history,{side,type:step.type,names:[...names]}],future:[]};
+}
+
+export function undoMove(match){
+  if(!match.history.length)return match;
+  return {...match,history:match.history.slice(0,-1),future:[match.history.at(-1),...(match.future??[])]};
+}
+export function redoMove(match){
+  if(!match.future?.length)return match;
+  const [move,...future]=match.future;
+  return {...applyMove(match,move.names),future};
 }

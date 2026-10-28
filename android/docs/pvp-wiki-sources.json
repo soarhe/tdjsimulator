@@ -1,0 +1,1681 @@
+{
+  "date": "2026-10-26",
+  "note": "仅表示页面读取状态，不表示规则已实现或全部完成语义校验。技能子形态与后续链接仍需继续查阅。",
+  "heroes": [
+    {
+      "hero": "魔宿霍雍",
+      "source": "https://wiki.biligame.com/tdj/魔宿霍雍",
+      "revision": 22790,
+      "linkedDetails": [
+        {
+          "title": "天赋/倾覆天星",
+          "source": "https://wiki.biligame.com/tdj/天赋/倾覆天星",
+          "read": true,
+          "revision": 22777
+        },
+        {
+          "title": "技能/王玺幻刃",
+          "source": "https://wiki.biligame.com/tdj/技能/王玺幻刃",
+          "read": true,
+          "revision": 22780
+        },
+        {
+          "title": "状态/宿光",
+          "source": "https://wiki.biligame.com/tdj/状态/宿光",
+          "read": true,
+          "revision": 22824
+        },
+        {
+          "title": "状态/宿幽",
+          "source": "https://wiki.biligame.com/tdj/状态/宿幽",
+          "read": true,
+          "revision": 22826
+        },
+        {
+          "title": "状态/宿暗",
+          "source": "https://wiki.biligame.com/tdj/状态/宿暗",
+          "read": true,
+          "revision": 22825
+        },
+        {
+          "title": "绝学/决意",
+          "source": "https://wiki.biligame.com/tdj/绝学/决意",
+          "read": true,
+          "revision": 37590
+        },
+        {
+          "title": "绝学/幽冥返召",
+          "source": "https://wiki.biligame.com/tdj/绝学/幽冥返召",
+          "read": true,
+          "revision": 36167
+        },
+        {
+          "title": "绝学/御法斗杀",
+          "source": "https://wiki.biligame.com/tdj/绝学/御法斗杀",
+          "read": false
+        },
+        {
+          "title": "绝学/戾血惑心",
+          "source": "https://wiki.biligame.com/tdj/绝学/戾血惑心",
+          "read": false
+        },
+        {
+          "title": "绝学/持重待机",
+          "source": "https://wiki.biligame.com/tdj/绝学/持重待机",
+          "read": false
+        },
+        {
+          "title": "绝学/暗星祝祀",
+          "source": "https://wiki.biligame.com/tdj/绝学/暗星祝祀",
+          "read": false
+        },
+        {
+          "title": "绝学/暗星祝祀·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/暗星祝祀·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/暗星祝祀·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/暗星祝祀·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/洞解天幕",
+          "source": "https://wiki.biligame.com/tdj/绝学/洞解天幕",
+          "read": false
+        },
+        {
+          "title": "绝学/诡妄冥狱",
+          "source": "https://wiki.biligame.com/tdj/绝学/诡妄冥狱",
+          "read": false
+        },
+        {
+          "title": "绝学/诡妄冥狱·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/诡妄冥狱·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/诡妄冥狱·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/诡妄冥狱·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/魂袅无明",
+          "source": "https://wiki.biligame.com/tdj/绝学/魂袅无明",
+          "read": false
+        },
+        {
+          "title": "绝学/魂袅无明·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/魂袅无明·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/魂袅无明·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/魂袅无明·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "天音白菀",
+      "source": "https://wiki.biligame.com/tdj/天音白菀",
+      "revision": 23080,
+      "linkedDetails": [
+        {
+          "title": "天赋/神阙天音",
+          "source": "https://wiki.biligame.com/tdj/天赋/神阙天音",
+          "read": true,
+          "revision": 23074
+        },
+        {
+          "title": "技能/菀柳鸣庭",
+          "source": "https://wiki.biligame.com/tdj/技能/菀柳鸣庭",
+          "read": true,
+          "revision": 23076
+        },
+        {
+          "title": "绝学/圣烨之护",
+          "source": "https://wiki.biligame.com/tdj/绝学/圣烨之护",
+          "read": true,
+          "revision": 35953
+        },
+        {
+          "title": "绝学/振羽呈瑞",
+          "source": "https://wiki.biligame.com/tdj/绝学/振羽呈瑞",
+          "read": false
+        },
+        {
+          "title": "绝学/神愈之术",
+          "source": "https://wiki.biligame.com/tdj/绝学/神愈之术",
+          "read": false
+        },
+        {
+          "title": "绝学/神气流转",
+          "source": "https://wiki.biligame.com/tdj/绝学/神气流转",
+          "read": false
+        },
+        {
+          "title": "绝学/衔柳济世",
+          "source": "https://wiki.biligame.com/tdj/绝学/衔柳济世",
+          "read": false
+        },
+        {
+          "title": "绝学/衔柳济世·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/衔柳济世·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/衔柳济世·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/衔柳济世·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/返阙易契",
+          "source": "https://wiki.biligame.com/tdj/绝学/返阙易契",
+          "read": false
+        },
+        {
+          "title": "绝学/返阙易契·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/返阙易契·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/返阙易契·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/返阙易契·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/闻笛折柳",
+          "source": "https://wiki.biligame.com/tdj/绝学/闻笛折柳",
+          "read": false
+        },
+        {
+          "title": "绝学/青枝垂泽",
+          "source": "https://wiki.biligame.com/tdj/绝学/青枝垂泽",
+          "read": false
+        },
+        {
+          "title": "绝学/青枝垂泽·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/青枝垂泽·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/青枝垂泽·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/青枝垂泽·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "明光剑圣",
+      "source": "https://wiki.biligame.com/tdj/明光剑圣",
+      "revision": 37885,
+      "linkedDetails": [
+        {
+          "title": "天赋/天外飞仙",
+          "source": "https://wiki.biligame.com/tdj/天赋/天外飞仙",
+          "read": true,
+          "revision": 38012
+        },
+        {
+          "title": "技能/神御天锋",
+          "source": "https://wiki.biligame.com/tdj/技能/神御天锋",
+          "read": true,
+          "revision": 37860
+        },
+        {
+          "title": "状态/剑痕",
+          "source": "https://wiki.biligame.com/tdj/状态/剑痕",
+          "read": true,
+          "revision": 37902
+        },
+        {
+          "title": "状态/驰骋",
+          "source": "https://wiki.biligame.com/tdj/状态/驰骋",
+          "read": true,
+          "revision": 22562
+        },
+        {
+          "title": "绝学/一剑封念·横",
+          "source": "https://wiki.biligame.com/tdj/绝学/一剑封念·横",
+          "read": true,
+          "revision": 37827
+        },
+        {
+          "title": "绝学/一剑封念·横·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/一剑封念·横·壹式",
+          "read": true,
+          "revision": 37892
+        },
+        {
+          "title": "绝学/一剑封念·横·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/一剑封念·横·贰式",
+          "read": true,
+          "revision": 37893
+        },
+        {
+          "title": "绝学/净光濯尘",
+          "source": "https://wiki.biligame.com/tdj/绝学/净光濯尘",
+          "read": true,
+          "revision": 37837
+        },
+        {
+          "title": "绝学/剑指天南·横",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑指天南·横",
+          "read": true,
+          "revision": 37826
+        },
+        {
+          "title": "绝学/剑指天南·横·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑指天南·横·壹式",
+          "read": true,
+          "revision": 37898
+        },
+        {
+          "title": "绝学/剑指天南·横·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑指天南·横·贰式",
+          "read": true,
+          "revision": 37899
+        },
+        {
+          "title": "绝学/变阵·横",
+          "source": "https://wiki.biligame.com/tdj/绝学/变阵·横",
+          "read": true,
+          "revision": 37833
+        },
+        {
+          "title": "绝学/变阵·纵",
+          "source": "https://wiki.biligame.com/tdj/绝学/变阵·纵",
+          "read": true,
+          "revision": 37830
+        },
+        {
+          "title": "绝学/天地同游·横",
+          "source": "https://wiki.biligame.com/tdj/绝学/天地同游·横",
+          "read": true,
+          "revision": 37824
+        },
+        {
+          "title": "绝学/御天",
+          "source": "https://wiki.biligame.com/tdj/绝学/御天",
+          "read": false
+        },
+        {
+          "title": "绝学/断错斩业",
+          "source": "https://wiki.biligame.com/tdj/绝学/断错斩业",
+          "read": false
+        },
+        {
+          "title": "绝学/断错斩业·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/断错斩业·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/断错斩业·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/断错斩业·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/明光圣临",
+          "source": "https://wiki.biligame.com/tdj/绝学/明光圣临",
+          "read": false
+        },
+        {
+          "title": "绝学/明镜止水",
+          "source": "https://wiki.biligame.com/tdj/绝学/明镜止水",
+          "read": false
+        },
+        {
+          "title": "绝学/溯洄神移",
+          "source": "https://wiki.biligame.com/tdj/绝学/溯洄神移",
+          "read": false
+        },
+        {
+          "title": "绝学/穿云破风",
+          "source": "https://wiki.biligame.com/tdj/绝学/穿云破风",
+          "read": false
+        },
+        {
+          "title": "绝学/突围",
+          "source": "https://wiki.biligame.com/tdj/绝学/突围",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "姬穸",
+      "source": "https://wiki.biligame.com/tdj/姬穸",
+      "revision": 38074,
+      "linkedDetails": [
+        {
+          "title": "天赋/鬼血阴身",
+          "source": "https://wiki.biligame.com/tdj/天赋/鬼血阴身",
+          "read": true,
+          "revision": 38046
+        },
+        {
+          "title": "技能/殇生同鸣",
+          "source": "https://wiki.biligame.com/tdj/技能/殇生同鸣",
+          "read": true,
+          "revision": 38048
+        },
+        {
+          "title": "状态/伤势",
+          "source": "https://wiki.biligame.com/tdj/状态/伤势",
+          "read": true,
+          "revision": 38066
+        },
+        {
+          "title": "状态/正练",
+          "source": "https://wiki.biligame.com/tdj/状态/正练",
+          "read": true,
+          "revision": 38067
+        },
+        {
+          "title": "状态/血童大法",
+          "source": "https://wiki.biligame.com/tdj/状态/血童大法",
+          "read": true,
+          "revision": 38089
+        },
+        {
+          "title": "状态/走火入魔",
+          "source": "https://wiki.biligame.com/tdj/状态/走火入魔",
+          "read": true,
+          "revision": 38070
+        },
+        {
+          "title": "状态/逆练",
+          "source": "https://wiki.biligame.com/tdj/状态/逆练",
+          "read": true,
+          "revision": 38068
+        },
+        {
+          "title": "绝学/决意",
+          "source": "https://wiki.biligame.com/tdj/绝学/决意",
+          "read": true,
+          "revision": 37590
+        },
+        {
+          "title": "绝学/十二血童大阵",
+          "source": "https://wiki.biligame.com/tdj/绝学/十二血童大阵",
+          "read": true,
+          "revision": 38045
+        },
+        {
+          "title": "绝学/十二血童大阵·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/十二血童大阵·壹式",
+          "read": true,
+          "revision": 38082
+        },
+        {
+          "title": "绝学/十二血童大阵·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/十二血童大阵·贰式",
+          "read": true,
+          "revision": 38084
+        },
+        {
+          "title": "绝学/天魔通",
+          "source": "https://wiki.biligame.com/tdj/绝学/天魔通",
+          "read": true,
+          "revision": 38042
+        },
+        {
+          "title": "绝学/役鬼秘术",
+          "source": "https://wiki.biligame.com/tdj/绝学/役鬼秘术",
+          "read": false
+        },
+        {
+          "title": "绝学/怖畏断生",
+          "source": "https://wiki.biligame.com/tdj/绝学/怖畏断生",
+          "read": false
+        },
+        {
+          "title": "绝学/游魂诡步",
+          "source": "https://wiki.biligame.com/tdj/绝学/游魂诡步",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼砂",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼砂",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼砂·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼砂·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼砂·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼砂·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼魔掌",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼魔掌",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼魔掌·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼魔掌·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/血犼魔掌·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/血犼魔掌·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/血童不死身",
+          "source": "https://wiki.biligame.com/tdj/绝学/血童不死身",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "幽姬鹿昭依",
+      "source": "https://wiki.biligame.com/tdj/幽姬鹿昭依",
+      "revision": 38111,
+      "linkedDetails": [
+        {
+          "title": "天赋/浊骨幽姬",
+          "source": "https://wiki.biligame.com/tdj/天赋/浊骨幽姬",
+          "read": true,
+          "revision": 20941
+        },
+        {
+          "title": "技能/遮天噬序",
+          "source": "https://wiki.biligame.com/tdj/技能/遮天噬序",
+          "read": true,
+          "revision": 20943
+        },
+        {
+          "title": "状态/蚩尤魂甲",
+          "source": "https://wiki.biligame.com/tdj/状态/蚩尤魂甲",
+          "read": true,
+          "revision": 21024
+        },
+        {
+          "title": "绝学/丧魂于野",
+          "source": "https://wiki.biligame.com/tdj/绝学/丧魂于野",
+          "read": true,
+          "revision": 35558
+        },
+        {
+          "title": "绝学/乘虚掠影",
+          "source": "https://wiki.biligame.com/tdj/绝学/乘虚掠影",
+          "read": true,
+          "revision": 35564
+        },
+        {
+          "title": "绝学/刚烈破",
+          "source": "https://wiki.biligame.com/tdj/绝学/刚烈破",
+          "read": true,
+          "revision": 35749
+        },
+        {
+          "title": "绝学/化腐生肌",
+          "source": "https://wiki.biligame.com/tdj/绝学/化腐生肌",
+          "read": true,
+          "revision": 35811
+        },
+        {
+          "title": "绝学/摧山斩",
+          "source": "https://wiki.biligame.com/tdj/绝学/摧山斩",
+          "read": false
+        },
+        {
+          "title": "绝学/沥血兵凶",
+          "source": "https://wiki.biligame.com/tdj/绝学/沥血兵凶",
+          "read": false
+        },
+        {
+          "title": "绝学/沥血兵凶·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/沥血兵凶·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/沥血兵凶·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/沥血兵凶·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/溶骨摄魄",
+          "source": "https://wiki.biligame.com/tdj/绝学/溶骨摄魄",
+          "read": false
+        },
+        {
+          "title": "绝学/溶骨摄魄·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/溶骨摄魄·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/溶骨摄魄·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/溶骨摄魄·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/缚力咒",
+          "source": "https://wiki.biligame.com/tdj/绝学/缚力咒",
+          "read": false
+        },
+        {
+          "title": "绝学/解身不退",
+          "source": "https://wiki.biligame.com/tdj/绝学/解身不退",
+          "read": false
+        },
+        {
+          "title": "绝学/解身不退·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/解身不退·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/解身不退·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/解身不退·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "妖佑宇韶容",
+      "source": "https://wiki.biligame.com/tdj/妖佑宇韶容",
+      "revision": 37822,
+      "linkedDetails": [
+        {
+          "title": "天赋/妖魂镇脉",
+          "source": "https://wiki.biligame.com/tdj/天赋/妖魂镇脉",
+          "read": true,
+          "revision": 37814
+        },
+        {
+          "title": "技能/猿鹤难渡",
+          "source": "https://wiki.biligame.com/tdj/技能/猿鹤难渡",
+          "read": true,
+          "revision": 37816
+        },
+        {
+          "title": "状态/妖佑",
+          "source": "https://wiki.biligame.com/tdj/状态/妖佑",
+          "read": true,
+          "revision": 37753
+        },
+        {
+          "title": "状态/幽寂",
+          "source": "https://wiki.biligame.com/tdj/状态/幽寂",
+          "read": true,
+          "revision": 18877
+        },
+        {
+          "title": "绝学/乱氛之仪",
+          "source": "https://wiki.biligame.com/tdj/绝学/乱氛之仪",
+          "read": true,
+          "revision": 35591
+        },
+        {
+          "title": "绝学/千仞断岩",
+          "source": "https://wiki.biligame.com/tdj/绝学/千仞断岩",
+          "read": true,
+          "revision": 37812
+        },
+        {
+          "title": "绝学/幽之力",
+          "source": "https://wiki.biligame.com/tdj/绝学/幽之力",
+          "read": true,
+          "revision": 36166
+        },
+        {
+          "title": "绝学/幽覆之咒",
+          "source": "https://wiki.biligame.com/tdj/绝学/幽覆之咒",
+          "read": false
+        },
+        {
+          "title": "绝学/玄刃分渊",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄刃分渊",
+          "read": false
+        },
+        {
+          "title": "绝学/玄刃分渊·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄刃分渊·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/玄刃分渊·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄刃分渊·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/绝径幽途",
+          "source": "https://wiki.biligame.com/tdj/绝学/绝径幽途",
+          "read": false
+        },
+        {
+          "title": "绝学/聚灵旋引",
+          "source": "https://wiki.biligame.com/tdj/绝学/聚灵旋引",
+          "read": false
+        },
+        {
+          "title": "绝学/聚灵旋引·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/聚灵旋引·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/聚灵旋引·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/聚灵旋引·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/追锋夺锐",
+          "source": "https://wiki.biligame.com/tdj/绝学/追锋夺锐",
+          "read": false
+        },
+        {
+          "title": "绝学/追锋夺锐·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/追锋夺锐·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/追锋夺锐·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/追锋夺锐·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "琴色",
+      "source": "https://wiki.biligame.com/tdj/琴色",
+      "revision": 22666,
+      "linkedDetails": [
+        {
+          "title": "天赋/朱弦阮音",
+          "source": "https://wiki.biligame.com/tdj/天赋/朱弦阮音",
+          "read": true,
+          "revision": 22661
+        },
+        {
+          "title": "技能/芙蓉泣露",
+          "source": "https://wiki.biligame.com/tdj/技能/芙蓉泣露",
+          "read": true,
+          "revision": 22662
+        },
+        {
+          "title": "状态/和弦",
+          "source": "https://wiki.biligame.com/tdj/状态/和弦",
+          "read": true,
+          "revision": 22714
+        },
+        {
+          "title": "状态/过量治疗",
+          "source": "https://wiki.biligame.com/tdj/状态/过量治疗",
+          "read": true,
+          "revision": 19382
+        },
+        {
+          "title": "状态/进攻类有益状态",
+          "source": "https://wiki.biligame.com/tdj/状态/进攻类有益状态",
+          "read": true,
+          "revision": 22710
+        },
+        {
+          "title": "状态/防御类有益状态",
+          "source": "https://wiki.biligame.com/tdj/状态/防御类有益状态",
+          "read": true,
+          "revision": 22715
+        },
+        {
+          "title": "绝学/仙乐清歌",
+          "source": "https://wiki.biligame.com/tdj/绝学/仙乐清歌",
+          "read": true,
+          "revision": 35617
+        },
+        {
+          "title": "绝学/仙乐清歌·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/仙乐清歌·壹式",
+          "read": true,
+          "revision": 35618
+        },
+        {
+          "title": "绝学/仙乐清歌·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/仙乐清歌·贰式",
+          "read": true,
+          "revision": 35619
+        },
+        {
+          "title": "绝学/圣烨之护",
+          "source": "https://wiki.biligame.com/tdj/绝学/圣烨之护",
+          "read": true,
+          "revision": 35953
+        },
+        {
+          "title": "绝学/气愈之术",
+          "source": "https://wiki.biligame.com/tdj/绝学/气愈之术",
+          "read": false
+        },
+        {
+          "title": "绝学/清商抚心",
+          "source": "https://wiki.biligame.com/tdj/绝学/清商抚心",
+          "read": false
+        },
+        {
+          "title": "绝学/清商抚心·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/清商抚心·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/清商抚心·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/清商抚心·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/神氛化法",
+          "source": "https://wiki.biligame.com/tdj/绝学/神氛化法",
+          "read": false
+        },
+        {
+          "title": "绝学/空山凝云",
+          "source": "https://wiki.biligame.com/tdj/绝学/空山凝云",
+          "read": false
+        },
+        {
+          "title": "绝学/空山凝云·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/空山凝云·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/空山凝云·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/空山凝云·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/金声玉振",
+          "source": "https://wiki.biligame.com/tdj/绝学/金声玉振",
+          "read": false
+        },
+        {
+          "title": "绝学/阳春白雪",
+          "source": "https://wiki.biligame.com/tdj/绝学/阳春白雪",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "苏醒者",
+      "source": "https://wiki.biligame.com/tdj/苏醒者",
+      "revision": 22812,
+      "linkedDetails": [
+        {
+          "title": "天赋/命运梭织",
+          "source": "https://wiki.biligame.com/tdj/天赋/命运梭织",
+          "read": true,
+          "revision": 17379
+        },
+        {
+          "title": "技能/织机牵行",
+          "source": "https://wiki.biligame.com/tdj/技能/织机牵行",
+          "read": true,
+          "revision": 17385
+        },
+        {
+          "title": "绝学/乱时攫运",
+          "source": "https://wiki.biligame.com/tdj/绝学/乱时攫运",
+          "read": true,
+          "revision": 35588
+        },
+        {
+          "title": "绝学/乱时攫运·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/乱时攫运·壹式",
+          "read": true,
+          "revision": 35589
+        },
+        {
+          "title": "绝学/乱时攫运·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/乱时攫运·贰式",
+          "read": true,
+          "revision": 35590
+        },
+        {
+          "title": "绝学/乱氛之仪",
+          "source": "https://wiki.biligame.com/tdj/绝学/乱氛之仪",
+          "read": true,
+          "revision": 35591
+        },
+        {
+          "title": "绝学/再入轮回",
+          "source": "https://wiki.biligame.com/tdj/绝学/再入轮回",
+          "read": true,
+          "revision": 35682
+        },
+        {
+          "title": "绝学/再入轮回·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/再入轮回·壹式",
+          "read": true,
+          "revision": 35683
+        },
+        {
+          "title": "绝学/再入轮回·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/再入轮回·贰式",
+          "read": true,
+          "revision": 35684
+        },
+        {
+          "title": "绝学/冥煞敕夺",
+          "source": "https://wiki.biligame.com/tdj/绝学/冥煞敕夺",
+          "read": true,
+          "revision": 35690
+        },
+        {
+          "title": "绝学/情仇皆妄",
+          "source": "https://wiki.biligame.com/tdj/绝学/情仇皆妄",
+          "read": false
+        },
+        {
+          "title": "绝学/瞬霎时停",
+          "source": "https://wiki.biligame.com/tdj/绝学/瞬霎时停",
+          "read": false
+        },
+        {
+          "title": "绝学/瞬霎时停·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/瞬霎时停·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/瞬霎时停·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/瞬霎时停·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/神念",
+          "source": "https://wiki.biligame.com/tdj/绝学/神念",
+          "read": false
+        },
+        {
+          "title": "绝学/远破",
+          "source": "https://wiki.biligame.com/tdj/绝学/远破",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "剑心无邪",
+      "source": "https://wiki.biligame.com/tdj/剑心无邪",
+      "revision": 21998,
+      "linkedDetails": [
+        {
+          "title": "天赋/笑敬山河",
+          "source": "https://wiki.biligame.com/tdj/天赋/笑敬山河",
+          "read": true,
+          "revision": 21928
+        },
+        {
+          "title": "技能/晓风催剑",
+          "source": "https://wiki.biligame.com/tdj/技能/晓风催剑",
+          "read": false
+        },
+        {
+          "title": "状态/醒剑骨",
+          "source": "https://wiki.biligame.com/tdj/状态/醒剑骨",
+          "read": true,
+          "revision": 21987
+        },
+        {
+          "title": "绝学/刚烈破",
+          "source": "https://wiki.biligame.com/tdj/绝学/刚烈破",
+          "read": true,
+          "revision": 35749
+        },
+        {
+          "title": "绝学/剑心出鞘",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑心出鞘",
+          "read": true,
+          "revision": 35765
+        },
+        {
+          "title": "绝学/剑心出鞘·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑心出鞘·壹式",
+          "read": true,
+          "revision": 35766
+        },
+        {
+          "title": "绝学/剑心出鞘·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑心出鞘·贰式",
+          "read": true,
+          "revision": 35767
+        },
+        {
+          "title": "绝学/剑破云袖",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑破云袖",
+          "read": true,
+          "revision": 35771
+        },
+        {
+          "title": "绝学/剑破云袖·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑破云袖·壹式",
+          "read": true,
+          "revision": 35772
+        },
+        {
+          "title": "绝学/剑破云袖·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/剑破云袖·贰式",
+          "read": true,
+          "revision": 35773
+        },
+        {
+          "title": "绝学/奋力",
+          "source": "https://wiki.biligame.com/tdj/绝学/奋力",
+          "read": true,
+          "revision": 36073
+        },
+        {
+          "title": "绝学/流霞定岳",
+          "source": "https://wiki.biligame.com/tdj/绝学/流霞定岳",
+          "read": false
+        },
+        {
+          "title": "绝学/穿胄胁迫",
+          "source": "https://wiki.biligame.com/tdj/绝学/穿胄胁迫",
+          "read": false
+        },
+        {
+          "title": "绝学/踏跃芳丛",
+          "source": "https://wiki.biligame.com/tdj/绝学/踏跃芳丛",
+          "read": false
+        },
+        {
+          "title": "绝学/醉歌点妆",
+          "source": "https://wiki.biligame.com/tdj/绝学/醉歌点妆",
+          "read": false
+        },
+        {
+          "title": "绝学/青山拂剑",
+          "source": "https://wiki.biligame.com/tdj/绝学/青山拂剑",
+          "read": false
+        },
+        {
+          "title": "绝学/青山拂剑·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/青山拂剑·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/青山拂剑·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/青山拂剑·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "尉迟慎",
+      "source": "https://wiki.biligame.com/tdj/尉迟慎",
+      "revision": 22665,
+      "linkedDetails": [
+        {
+          "title": "天赋/天命临世",
+          "source": "https://wiki.biligame.com/tdj/天赋/天命临世",
+          "read": true,
+          "revision": 22742
+        },
+        {
+          "title": "技能/砺兵濯心",
+          "source": "https://wiki.biligame.com/tdj/技能/砺兵濯心",
+          "read": true,
+          "revision": 22653
+        },
+        {
+          "title": "状态/化境",
+          "source": "https://wiki.biligame.com/tdj/状态/化境",
+          "read": true,
+          "revision": 22708
+        },
+        {
+          "title": "状态/灵渊",
+          "source": "https://wiki.biligame.com/tdj/状态/灵渊",
+          "read": true,
+          "revision": 22707
+        },
+        {
+          "title": "绝学/列阵",
+          "source": "https://wiki.biligame.com/tdj/绝学/列阵",
+          "read": true,
+          "revision": 35744
+        },
+        {
+          "title": "绝学/劫断幽垠",
+          "source": "https://wiki.biligame.com/tdj/绝学/劫断幽垠",
+          "read": true,
+          "revision": 35798
+        },
+        {
+          "title": "绝学/圣佑恩泽",
+          "source": "https://wiki.biligame.com/tdj/绝学/圣佑恩泽",
+          "read": true,
+          "revision": 35950
+        },
+        {
+          "title": "绝学/圣佑恩泽·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/圣佑恩泽·壹式",
+          "read": true,
+          "revision": 35951
+        },
+        {
+          "title": "绝学/圣佑恩泽·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/圣佑恩泽·贰式",
+          "read": true,
+          "revision": 35952
+        },
+        {
+          "title": "绝学/山海共临",
+          "source": "https://wiki.biligame.com/tdj/绝学/山海共临",
+          "read": true,
+          "revision": 36143
+        },
+        {
+          "title": "绝学/帝俊威仪",
+          "source": "https://wiki.biligame.com/tdj/绝学/帝俊威仪",
+          "read": true,
+          "revision": 36159
+        },
+        {
+          "title": "绝学/帝俊威仪·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/帝俊威仪·壹式",
+          "read": true,
+          "revision": 36160
+        },
+        {
+          "title": "绝学/帝俊威仪·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/帝俊威仪·贰式",
+          "read": true,
+          "revision": 36161
+        },
+        {
+          "title": "绝学/摧山斩",
+          "source": "https://wiki.biligame.com/tdj/绝学/摧山斩",
+          "read": false
+        },
+        {
+          "title": "绝学/灵息轮转",
+          "source": "https://wiki.biligame.com/tdj/绝学/灵息轮转",
+          "read": false
+        },
+        {
+          "title": "绝学/猛鬼破冲",
+          "source": "https://wiki.biligame.com/tdj/绝学/猛鬼破冲",
+          "read": false
+        },
+        {
+          "title": "绝学/辟邪明光",
+          "source": "https://wiki.biligame.com/tdj/绝学/辟邪明光",
+          "read": false
+        },
+        {
+          "title": "绝学/辟邪明光·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/辟邪明光·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/辟邪明光·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/辟邪明光·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "瑚儿",
+      "source": "https://wiki.biligame.com/tdj/瑚儿",
+      "revision": 22000,
+      "linkedDetails": [
+        {
+          "title": "天赋/金枝御佑",
+          "source": "https://wiki.biligame.com/tdj/天赋/金枝御佑",
+          "read": true,
+          "revision": 21848
+        },
+        {
+          "title": "技能/灯祐和年",
+          "source": "https://wiki.biligame.com/tdj/技能/灯祐和年",
+          "read": true,
+          "revision": 21851
+        },
+        {
+          "title": "状态/安定",
+          "source": "https://wiki.biligame.com/tdj/状态/安定",
+          "read": true,
+          "revision": 22083
+        },
+        {
+          "title": "状态/进攻类有害状态",
+          "source": "https://wiki.biligame.com/tdj/状态/进攻类有害状态",
+          "read": true,
+          "revision": 21993
+        },
+        {
+          "title": "状态/进攻类有益状态",
+          "source": "https://wiki.biligame.com/tdj/状态/进攻类有益状态",
+          "read": true,
+          "revision": 22710
+        },
+        {
+          "title": "状态/防御类有害状态",
+          "source": "https://wiki.biligame.com/tdj/状态/防御类有害状态",
+          "read": true,
+          "revision": 22709
+        },
+        {
+          "title": "状态/防御类有益状态",
+          "source": "https://wiki.biligame.com/tdj/状态/防御类有益状态",
+          "read": true,
+          "revision": 22715
+        },
+        {
+          "title": "绝学/气愈之术",
+          "source": "https://wiki.biligame.com/tdj/绝学/气愈之术",
+          "read": false
+        },
+        {
+          "title": "绝学/海玉呈安",
+          "source": "https://wiki.biligame.com/tdj/绝学/海玉呈安",
+          "read": false
+        },
+        {
+          "title": "绝学/玉宸天威",
+          "source": "https://wiki.biligame.com/tdj/绝学/玉宸天威",
+          "read": false
+        },
+        {
+          "title": "绝学/玉宸天威·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玉宸天威·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/玉宸天威·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玉宸天威·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/电掣",
+          "source": "https://wiki.biligame.com/tdj/绝学/电掣",
+          "read": false
+        },
+        {
+          "title": "绝学/祈护诀",
+          "source": "https://wiki.biligame.com/tdj/绝学/祈护诀",
+          "read": false
+        },
+        {
+          "title": "绝学/神氛化法",
+          "source": "https://wiki.biligame.com/tdj/绝学/神氛化法",
+          "read": false
+        },
+        {
+          "title": "绝学/移宫护驾",
+          "source": "https://wiki.biligame.com/tdj/绝学/移宫护驾",
+          "read": false
+        },
+        {
+          "title": "绝学/移宫护驾·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/移宫护驾·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/移宫护驾·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/移宫护驾·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/赦尘丹书",
+          "source": "https://wiki.biligame.com/tdj/绝学/赦尘丹书",
+          "read": false
+        },
+        {
+          "title": "绝学/赦尘丹书·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/赦尘丹书·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/赦尘丹书·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/赦尘丹书·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "波旬尉迟良",
+      "source": "https://wiki.biligame.com/tdj/波旬尉迟良",
+      "revision": 22668,
+      "linkedDetails": [
+        {
+          "title": "天赋/波旬欲界",
+          "source": "https://wiki.biligame.com/tdj/天赋/波旬欲界",
+          "read": true,
+          "revision": 17111
+        },
+        {
+          "title": "技能/铁锁连环",
+          "source": "https://wiki.biligame.com/tdj/技能/铁锁连环",
+          "read": true,
+          "revision": 17116
+        },
+        {
+          "title": "状态/心念",
+          "source": "https://wiki.biligame.com/tdj/状态/心念",
+          "read": true,
+          "revision": 18541
+        },
+        {
+          "title": "状态/波旬降临",
+          "source": "https://wiki.biligame.com/tdj/状态/波旬降临",
+          "read": true,
+          "revision": 18635
+        },
+        {
+          "title": "状态/链锁",
+          "source": "https://wiki.biligame.com/tdj/状态/链锁",
+          "read": true,
+          "revision": 18792
+        },
+        {
+          "title": "绝学/六欲讹心",
+          "source": "https://wiki.biligame.com/tdj/绝学/六欲讹心",
+          "read": true,
+          "revision": 35670
+        },
+        {
+          "title": "绝学/六欲讹心·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/六欲讹心·壹式",
+          "read": true,
+          "revision": 35671
+        },
+        {
+          "title": "绝学/六欲讹心·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/六欲讹心·贰式",
+          "read": true,
+          "revision": 35672
+        },
+        {
+          "title": "绝学/善法自然",
+          "source": "https://wiki.biligame.com/tdj/绝学/善法自然",
+          "read": true,
+          "revision": 35922
+        },
+        {
+          "title": "绝学/善法自然·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/善法自然·壹式",
+          "read": true,
+          "revision": 35923
+        },
+        {
+          "title": "绝学/善法自然·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/善法自然·贰式",
+          "read": true,
+          "revision": 35924
+        },
+        {
+          "title": "绝学/意志承继",
+          "source": "https://wiki.biligame.com/tdj/绝学/意志承继",
+          "read": false
+        },
+        {
+          "title": "绝学/抑恶孽形",
+          "source": "https://wiki.biligame.com/tdj/绝学/抑恶孽形",
+          "read": false
+        },
+        {
+          "title": "绝学/摩罗勒喉",
+          "source": "https://wiki.biligame.com/tdj/绝学/摩罗勒喉",
+          "read": false
+        },
+        {
+          "title": "绝学/蓄势",
+          "source": "https://wiki.biligame.com/tdj/绝学/蓄势",
+          "read": false
+        },
+        {
+          "title": "绝学/蓄势化形",
+          "source": "https://wiki.biligame.com/tdj/绝学/蓄势化形",
+          "read": false
+        },
+        {
+          "title": "绝学/蓄势化形·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/蓄势化形·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/蓄势化形·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/蓄势化形·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/避实就虚",
+          "source": "https://wiki.biligame.com/tdj/绝学/避实就虚",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "胧梦婳妖",
+      "source": "https://wiki.biligame.com/tdj/胧梦婳妖",
+      "revision": 19342,
+      "linkedDetails": [
+        {
+          "title": "天赋/婳镜凝幽",
+          "source": "https://wiki.biligame.com/tdj/天赋/婳镜凝幽",
+          "read": true,
+          "revision": 19334
+        },
+        {
+          "title": "技能/弄妄成真",
+          "source": "https://wiki.biligame.com/tdj/技能/弄妄成真",
+          "read": true,
+          "revision": 19340
+        },
+        {
+          "title": "状态/暗铠",
+          "source": "https://wiki.biligame.com/tdj/状态/暗铠",
+          "read": true,
+          "revision": 18610
+        },
+        {
+          "title": "状态/过量治疗",
+          "source": "https://wiki.biligame.com/tdj/状态/过量治疗",
+          "read": true,
+          "revision": 19382
+        },
+        {
+          "title": "状态/镜朦胧",
+          "source": "https://wiki.biligame.com/tdj/状态/镜朦胧",
+          "read": true,
+          "revision": 19383
+        },
+        {
+          "title": "绝学/地御之阵",
+          "source": "https://wiki.biligame.com/tdj/绝学/地御之阵",
+          "read": true,
+          "revision": 35956
+        },
+        {
+          "title": "绝学/指鉴移时",
+          "source": "https://wiki.biligame.com/tdj/绝学/指鉴移时",
+          "read": false
+        },
+        {
+          "title": "绝学/指鉴移时·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/指鉴移时·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/指鉴移时·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/指鉴移时·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/月照镜影",
+          "source": "https://wiki.biligame.com/tdj/绝学/月照镜影",
+          "read": false
+        },
+        {
+          "title": "绝学/气愈之术",
+          "source": "https://wiki.biligame.com/tdj/绝学/气愈之术",
+          "read": false
+        },
+        {
+          "title": "绝学/水月镜花",
+          "source": "https://wiki.biligame.com/tdj/绝学/水月镜花",
+          "read": false
+        },
+        {
+          "title": "绝学/水月镜花·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/水月镜花·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/水月镜花·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/水月镜花·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/神氛化法",
+          "source": "https://wiki.biligame.com/tdj/绝学/神氛化法",
+          "read": false
+        },
+        {
+          "title": "绝学/镜分虚实",
+          "source": "https://wiki.biligame.com/tdj/绝学/镜分虚实",
+          "read": false
+        },
+        {
+          "title": "绝学/镜华还转",
+          "source": "https://wiki.biligame.com/tdj/绝学/镜华还转",
+          "read": false
+        },
+        {
+          "title": "绝学/黯冥镜渊",
+          "source": "https://wiki.biligame.com/tdj/绝学/黯冥镜渊",
+          "read": false
+        },
+        {
+          "title": "绝学/黯冥镜渊·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/黯冥镜渊·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/黯冥镜渊·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/黯冥镜渊·贰式",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "连环",
+      "source": "https://wiki.biligame.com/tdj/连环",
+      "revision": 37990,
+      "linkedDetails": [
+        {
+          "title": "天赋/云岫育灵",
+          "source": "https://wiki.biligame.com/tdj/天赋/云岫育灵",
+          "read": true,
+          "revision": 37978
+        },
+        {
+          "title": "技能/赤明护法",
+          "source": "https://wiki.biligame.com/tdj/技能/赤明护法",
+          "read": true,
+          "revision": 37980
+        },
+        {
+          "title": "绝学/山炎净域",
+          "source": "https://wiki.biligame.com/tdj/绝学/山炎净域",
+          "read": true,
+          "revision": 37974
+        },
+        {
+          "title": "绝学/山炎净域·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/山炎净域·壹式",
+          "read": true,
+          "revision": 37993
+        },
+        {
+          "title": "绝学/山炎净域·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/山炎净域·贰式",
+          "read": true,
+          "revision": 37994
+        },
+        {
+          "title": "绝学/扬袂拂尘",
+          "source": "https://wiki.biligame.com/tdj/绝学/扬袂拂尘",
+          "read": false
+        },
+        {
+          "title": "绝学/扬袂拂尘·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/扬袂拂尘·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/扬袂拂尘·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/扬袂拂尘·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/摧山斩",
+          "source": "https://wiki.biligame.com/tdj/绝学/摧山斩",
+          "read": false
+        },
+        {
+          "title": "绝学/朝云庇身",
+          "source": "https://wiki.biligame.com/tdj/绝学/朝云庇身",
+          "read": false
+        },
+        {
+          "title": "绝学/朝云庇身·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/朝云庇身·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/朝云庇身·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/朝云庇身·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/焚香布岚",
+          "source": "https://wiki.biligame.com/tdj/绝学/焚香布岚",
+          "read": false
+        },
+        {
+          "title": "绝学/缚力咒",
+          "source": "https://wiki.biligame.com/tdj/绝学/缚力咒",
+          "read": false
+        },
+        {
+          "title": "绝学/蓄势化甲",
+          "source": "https://wiki.biligame.com/tdj/绝学/蓄势化甲",
+          "read": false
+        },
+        {
+          "title": "绝学/贞清还浊",
+          "source": "https://wiki.biligame.com/tdj/绝学/贞清还浊",
+          "read": false
+        }
+      ]
+    },
+    {
+      "hero": "诸葛亮",
+      "source": "https://wiki.biligame.com/tdj/诸葛亮",
+      "revision": 37615,
+      "linkedDetails": [
+        {
+          "title": "天赋/卧龙分野",
+          "source": "https://wiki.biligame.com/tdj/天赋/卧龙分野",
+          "read": true,
+          "revision": 37690
+        },
+        {
+          "title": "技能/鹤羽神相",
+          "source": "https://wiki.biligame.com/tdj/技能/鹤羽神相",
+          "read": true,
+          "revision": 37598
+        },
+        {
+          "title": "状态/士气提升",
+          "source": "https://wiki.biligame.com/tdj/状态/士气提升",
+          "read": true,
+          "revision": 37693
+        },
+        {
+          "title": "状态/士气降低",
+          "source": "https://wiki.biligame.com/tdj/状态/士气降低",
+          "read": true,
+          "revision": 37694
+        },
+        {
+          "title": "状态/料敌如神",
+          "source": "https://wiki.biligame.com/tdj/状态/料敌如神",
+          "read": true,
+          "revision": 37695
+        },
+        {
+          "title": "绝学/决意",
+          "source": "https://wiki.biligame.com/tdj/绝学/决意",
+          "read": true,
+          "revision": 37590
+        },
+        {
+          "title": "绝学/南屏祭风",
+          "source": "https://wiki.biligame.com/tdj/绝学/南屏祭风",
+          "read": true,
+          "revision": 37592
+        },
+        {
+          "title": "绝学/坎浸",
+          "source": "https://wiki.biligame.com/tdj/绝学/坎浸",
+          "read": true,
+          "revision": 37591
+        },
+        {
+          "title": "绝学/河洛八阵",
+          "source": "https://wiki.biligame.com/tdj/绝学/河洛八阵",
+          "read": false
+        },
+        {
+          "title": "绝学/河洛八阵·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/河洛八阵·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/河洛八阵·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/河洛八阵·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/玄图布策",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄图布策",
+          "read": false
+        },
+        {
+          "title": "绝学/玄图布策·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄图布策·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/玄图布策·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/玄图布策·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/秋风燎原",
+          "source": "https://wiki.biligame.com/tdj/绝学/秋风燎原",
+          "read": false
+        },
+        {
+          "title": "绝学/秋风燎原·壹式",
+          "source": "https://wiki.biligame.com/tdj/绝学/秋风燎原·壹式",
+          "read": false
+        },
+        {
+          "title": "绝学/秋风燎原·贰式",
+          "source": "https://wiki.biligame.com/tdj/绝学/秋风燎原·贰式",
+          "read": false
+        },
+        {
+          "title": "绝学/舌战笔诛",
+          "source": "https://wiki.biligame.com/tdj/绝学/舌战笔诛",
+          "read": false
+        },
+        {
+          "title": "绝学/观星·争锋",
+          "source": "https://wiki.biligame.com/tdj/绝学/观星·争锋",
+          "read": false
+        },
+        {
+          "title": "绝学/观星·持守",
+          "source": "https://wiki.biligame.com/tdj/绝学/观星·持守",
+          "read": false
+        },
+        {
+          "title": "绝学/观星·解厄",
+          "source": "https://wiki.biligame.com/tdj/绝学/观星·解厄",
+          "read": false
+        },
+        {
+          "title": "绝学/震晦生明",
+          "source": "https://wiki.biligame.com/tdj/绝学/震晦生明",
+          "read": false
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import {videoRoster} from './heroes.mjs';
 import {catalog as heroes} from './catalog.mjs';
 import {createBoxEditor,validBox} from './box-editor.mjs?v=20261023-editor-selection-sync';
 import {portraits} from './portraits.mjs';
-import {steps,parseRoster,createMatch,sideForRole,statusFor,applyMove} from './rules.mjs';
+import {steps,parseRoster,createMatch,sideForRole,statusFor,applyMove,undoMove,redoMove} from './rules.mjs?v=20261023-redo';
 const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const labels=['甲方','乙方'], key='tdj-bp-v1';
 const updateFloatingCommand=setupFloatingCommand();
@@ -68,8 +68,8 @@ function render(){
   $('#confirm').hidden=!step;$('#confirm').disabled=!step||selected.length!==step.count;
   $('#confirm').textContent=step?.type==='ban'?'确认禁用':'确认上阵';
   $('#confirm').classList.toggle('danger',step?.type==='ban');
-  $('#undo').disabled=index===0;$('#progress-fill').style.width=`${index/16*100}%`;
-  $('#assignment').textContent=`本局随机分配：${labels[match.first]}先手 / ${labels[1-match.first]}后手`;
+  $('#undo').disabled=index===0;$('#redo').disabled=!match.future?.length;$('#progress-fill').style.width=`${index/16*100}%`;
+  $('#assignment').textContent=`本局顺序：${labels[match.first]}先手 / ${labels[1-match.first]}后手`;
   const expanded=new Set([...document.querySelectorAll('[data-formation][open]')].map(el=>el.dataset.formation));
   $('#boards').innerHTML=[0,1].map(side=>{
     const active=step&&sideForRole(match,step.target)===side;
@@ -103,13 +103,16 @@ try{
       return [...previousDefault]; // Keep an existing draft’s participants unchanged.
     });
     if(Array.isArray(saved.rosters)&&saved.rosters.length===2&&saved.rosters.every(x=>typeof x==='string'))saved.rosters.forEach((r,i)=>$('#roster'+i).value=r);
-    if(saved.match){let restored=createMatch(saved.match.rosters,saved.match.first);for(const move of saved.match.history){const step=steps[restored.history.length];if(!step||move.side!==sideForRole(restored,step.target)||move.type!==step.type)throw Error('无效进度');restored=applyMove(restored,move.names);}match=restored;notice('已恢复上次的 BP 进度。');}
+    if(saved.match){let restored=createMatch(saved.match.rosters,saved.match.first);for(const move of saved.match.history){const step=steps[restored.history.length];if(!step||move.side!==sideForRole(restored,step.target)||move.type!==step.type)throw Error('无效进度');restored=applyMove(restored,move.names);}match=restored;
+      // Validate saved redo moves without discarding a valid current position.
+      try{let replay=restored;for(const move of saved.match.future??[]){const step=steps[replay.history.length];if(!step||move.side!==sideForRole(replay,step.target)||move.type!==step.type)throw Error('无效后续记录');replay=applyMove(replay,move.names);}match={...restored,future:replay.history.slice(restored.history.length)};}catch{match=restored;}
+      notice('已恢复上次的 BP 进度。');}
   }
 }catch{notice('未能恢复旧进度，请重新开始本局。');}
 updateCounts();render();
-$('#start').addEventListener('click',()=>{
-  try{const rosters=[0,1].map(s=>{try{const names=parseRoster($('#roster'+s).value);if(!validBox(names))throw Error('请选择 15 名绝品或典藏英灵');return names;}catch(e){$('#edit-box'+s).focus();throw Error(labels[s]+'：'+e.message);}});match=createMatch(rosters,crypto.getRandomValues(new Uint32Array(1))[0]%2);selected=[];notice('');save();render();$('#arena').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}
-});
+document.querySelectorAll('[data-first]').forEach(button=>button.addEventListener('click',()=>{
+  try{const rosters=[0,1].map(s=>{try{const names=parseRoster($('#roster'+s).value);if(!validBox(names))throw Error('请选择 15 名绝品或典藏英灵');return names;}catch(e){$('#edit-box'+s).focus();throw Error(labels[s]+'：'+e.message);}});match=createMatch(rosters,Number(button.dataset.first));selected=[];notice('');save();render();$('#arena').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){notice(e.message);}
+}));
 $('#boards').addEventListener('click',event=>{
   const summary=event.target.closest('.formation-card > summary');
   if(summary){
@@ -126,7 +129,8 @@ $('#boards').addEventListener('click',event=>{
   notice('');render();$('#boards').querySelector(`[data-side="${side}"][data-index="${button.dataset.index}"]`)?.focus({preventScroll:true});
 });
 $('#confirm').addEventListener('click',()=>{try{match=applyMove(match,selected);selected=[];notice('');save();render();$('#instruction').setAttribute('tabindex','-1');$('#instruction').focus({preventScroll:true});}catch(e){notice(e.message);}});
-$('#undo').addEventListener('click',()=>{if(!match.history.length)return;match={...match,history:match.history.slice(0,-1)};selected=[];notice('已撤销上一步。');save();render();});
+$('#undo').addEventListener('click',()=>{if(!match.history.length)return;match=undoMove(match);selected=[];notice('已撤销上一步。');save();render();});
+$('#redo').addEventListener('click',()=>{if(!match?.future?.length)return;match=redoMove(match);selected=[];notice('已恢复下一步。');save();render();});
 $('#restart').addEventListener('click',()=>$('#reset-dialog').showModal());
 $('#reset-dialog').addEventListener('close',()=>{if($('#reset-dialog').returnValue!=='reset')return;match=null;selected=[];notice('');save();render();$('#setup').scrollIntoView({behavior:'smooth'});});
 $('#copy').addEventListener('click',async()=>{

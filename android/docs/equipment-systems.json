@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26",
+  "implemented": false,
+  "configurationFlow": {
+    "source": "用户确认",
+    "phases": [
+      "战前锁配置",
+      "BP",
+      "战斗准备：只调站位与携带技能，援袭不能调",
+      "战斗"
+    ]
+  },
+  "accessories": {
+    "slots": [
+      "头部",
+      "衣装",
+      "腰部",
+      "手部"
+    ],
+    "validation": [
+      "每槽最多一件",
+      "职业必须在允许列表内",
+      "套装按实际不同组件计数，达到两件和三件分别生效",
+      "单件效果与套装效果都保留",
+      "未知装备效果不默认为零"
+    ]
+  },
+  "souls": {
+    "slots": [
+      "天",
+      "地",
+      "荒"
+    ],
+    "sameFamilyThresholds": [
+      2,
+      3
+    ],
+    "fieldsPerStone": [
+      "family",
+      "slot",
+      "rarity",
+      "level",
+      "baseStats",
+      "affixesWithActualValues"
+    ],
+    "sources": [
+      "https://wiki.biligame.com/tdj/兵刃-魂石",
+      "https://news.zlongame.com/jx/tdjzsk/20210125/13153.html",
+      "https://tdj.zlongame.com/jx/tdjNotice/20250211/23517.html"
+    ],
+    "notes": [
+      "3槽分别记录实际魂石，不能默认三枚同魂",
+      "锻魂最多锁定4条词条，养成方式不改变读取实际配置的要求",
+      "旧介绍的20级不能作为现版本硬上限；25级资料存在，但本次未完成官方逐级表核验",
+      "词条上下限及满级基础值不能代替实装数值"
+    ]
+  },
+  "starSoul": {
+    "selectionLimit": 1,
+    "optionsPerJob": 6,
+    "unlockTeamLevel": 65,
+    "unlockHeroLevel": 65,
+    "resonanceThresholds": [
+      5,
+      15,
+      30
+    ],
+    "fields": [
+      "selectedOption",
+      "optionRanks",
+      "resonanceBaseStats",
+      "actualSelectedEffect"
+    ],
+    "source": "https://tdj.zlongame.com/jx/tdjNotice/20220809/15651.html",
+    "notes": [
+      "回响同时影响基础属性和所选效果，等级合计另有门槛奖励",
+      "48项原表值已保存；不是独立核验过的逐级或满级表"
+    ]
+  },
+  "starCrystal": {
+    "branches": [
+      "荧惑",
+      "辰星",
+      "太白"
+    ],
+    "tracesPerBranch": 2,
+    "publishedLevelRange": [
+      1,
+      12
+    ],
+    "publishedWeaponLevelThresholds": {
+      "2": 15,
+      "3": 30,
+      "4": 45,
+      "5": 60
+    },
+    "source": "https://wiki.biligame.com/tdj/神兵化臻系统介绍",
+    "fields": [
+      "sixActualCrystals",
+      "actualStats",
+      "actualWeaponLevel",
+      "weaponEffectVersion"
+    ],
+    "notes": [
+      "早期介绍的解锁前提不作为现版本硬约束",
+      "原表星之晶上限是数值边界资料，不是六枚晶体实装",
+      "神兵等级影响技能机制，必须绑定角色技能版本"
+    ]
+  },
+  "observations": {
+    "source": "用户确认及建模约定",
+    "rules": [
+      "面板攻防已含buff，禁止再次叠加已体现的增益",
+      "配置、战中面板、隐藏条件效果分开记录",
+      "保存观测时刻、单位、回合与来源；失效缓存不可沿用",
+      "敌方未知词条或装备保留候选区间，不伪造确定配置"
+    ]
+  },
+  "unresolved": [
+    {
+      "id": "E01",
+      "topic": "5件原表装备的当前客户端描述",
+      "items": [
+        "武星煞容",
+        "雪璃宝甲",
+        "极意九重",
+        "离人簪",
+        "出师表"
+      ],
+      "status": "Wiki missingtitle，保留原表；公告能确认部分存在，不能验证全部效果"
+    },
+    {
+      "id": "E02",
+      "topic": "魂石等级、各槽词条范围及星魂逐级数值",
+      "status": "缺少可靠完整表；实际配置可直接读取，不阻塞配置建模"
+    },
+    {
+      "id": "E03",
+      "topic": "套装方向、护卫、跨阈值、叠层和多目标概率判定",
+      "status": "文字不能唯一确定；equipment-rules.json各套openQuestions列出回放验例"
+    },
+    {
+      "id": "E04",
+      "topic": "括羽、辟眩、魂力、剑意、猎印、无摧·禁疗的状态元数据",
+      "status": "效果可从装备描述取得；没有明确写出的驱散/扩散/偷取属性保持未知"
+    },
+    {
+      "id": "E05",
+      "topic": "首版己方逐角色实装",
+      "status": "尚未绑定，不等于资料库缺少装备名称"
+    }
+  ]
+}

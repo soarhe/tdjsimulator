@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><script type="module">
+import {Battle} from './battle.mjs';
+let battle;
+try {
+ const data=await(await fetch('./workbook.json')).json();
+ const config=JSON.parse(Native.loadConfig());
+ battle=new Battle(data,config);
+ window.feed=(panel,role)=>{try {Native.result(JSON.stringify(battle.ingest(panel,role)));}catch(e){Native.error(e.message);}};
+ window.refresh=()=>Native.result(JSON.stringify(battle.predict()));
+ window.record=(name,damage,critical)=>{try {Native.recorded(JSON.stringify(battle.recordHit(name,damage,critical)));}catch(e){Native.error(e.message);}};
+ Native.ready();
+} catch(e){ Native.error(e.message); }
+</script>

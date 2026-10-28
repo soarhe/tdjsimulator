@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-26",
+  "scope": "原表4种饰品套装及20种魂石的资料层，不是完整游戏数据库或已实现规则",
+  "statusMeaning": {
+    "wiki_text_checked": "描述已与Wiki核对，交互及实现未验证",
+    "wiki_index_checked": "仅图鉴正文核对，详情读取失败或未完整读到"
+  },
+  "accessories": [
+    {
+      "title": "天石命坠",
+      "slot": "头部",
+      "allowedJobs": [
+        "铁卫"
+      ],
+      "set": "鸿宇天石",
+      "effectTextFromWorkbook": "物攻+7%，气血+7%，遭受攻击「对战前」，若自身气血百分比大于等于目标，则对目标造成一次「固定伤害」（数值为（物防+法防）*50%），并使目标1个随机属性降低仅铁卫可用",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E5%91%BD%E5%9D%A0"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "天石云佩",
+      "slot": "衣装",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "鸿宇天石",
+      "effectTextFromWorkbook": "气血大于等于80%时，物防+15%。遭受攻击「对战中」物理免伤+10%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E4%BA%91%E4%BD%A9"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "天石符珠",
+      "slot": "腰部",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "鸿宇天石",
+      "effectTextFromWorkbook": "气血大于等于80%时，法防+15%。遭受攻击「对战中」法术免伤+10%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E7%AC%A6%E7%8F%A0"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "寰光剑玉",
+      "slot": "头部",
+      "allowedJobs": [
+        "侠客"
+      ],
+      "set": "寰光授剑",
+      "effectTextFromWorkbook": "物攻+5%，气血+5%，若目标气血不满，则「对战中」伤害提高10%，若目标气血低于50%，则「对战中」暴击率提高15%。「寰光授剑」套装头部，仅侠客可用",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E5%89%91%E7%8E%89"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "寰光佩环",
+      "slot": "衣装",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "寰光授剑",
+      "effectTextFromWorkbook": "物防、气血+5%，遭受攻击时若自身物攻大于目标，则「对战中」物理免伤+30%「寰光授剑」套装衣装",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E4%BD%A9%E7%8E%AF"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "寰光蔽月",
+      "slot": "腰部",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "寰光授剑",
+      "effectTextFromWorkbook": "法防、气血+5%，自身满血时，暴击抗性和法术免伤+15%「寰光授剑」套装腰部",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E8%94%BD%E6%9C%88"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "荆羽覆心",
+      "slot": "衣装",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "荆羽护元",
+      "effectTextFromWorkbook": "物防、气血+5%，气血等于100%时，遭受范围伤害降低25%；反之，遭受「固定伤害」降低50%「荆羽护元」套装衣装",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E8%8D%86%E7%BE%BD%E8%A6%86%E5%BF%83"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "荆羽利刹",
+      "slot": "腰部",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "荆羽护元",
+      "effectTextFromWorkbook": "法防、气血+5%，遭受攻击时若自身会心值大于目标，则「对战中」免伤+15%「荆羽护元」套装腰部",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E8%8D%86%E7%BE%BD%E5%88%A9%E5%88%B9"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "荆羽焰鳞",
+      "slot": "手部",
+      "allowedJobs": [
+        "羽士"
+      ],
+      "set": "荆羽护元",
+      "effectTextFromWorkbook": "全属性+5%，主动攻击「对战中」暴击伤害和穿透+10%，且「对战后」50%概率施加「流血」状态，持续2回合。「荆羽护元」套装手部，仅羽士可用",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%A5%B0%E5%93%81%E5%9B%BE%E9%89%B4",
+        "https://wiki.biligame.com/tdj/%E8%8D%86%E7%BE%BD%E8%A6%86%E5%BF%83"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "implemented": false
+    },
+    {
+      "title": "化魄法令",
+      "slot": "衣装",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "灵脉化魄",
+      "effectTextFromWorkbook": "物防、气血+5%，气血大于等于80%时，遭受暴击概率和范围伤害降低15%「灵脉化魄」套装衣装",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E6%B3%95%E4%BB%A4"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "化魄点睛",
+      "slot": "腰部",
+      "allowedJobs": [
+        "全职业"
+      ],
+      "set": "灵脉化魄",
+      "effectTextFromWorkbook": "法防、气血+5%，遭受攻击时若自身法攻大于目标，则「对战中」免伤+15%「灵脉化魄」套装腰部",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E7%82%B9%E7%9D%9B"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    },
+    {
+      "title": "化魄秘镯",
+      "slot": "手部",
+      "allowedJobs": [
+        "咒师"
+      ],
+      "set": "灵脉化魄",
+      "effectTextFromWorkbook": "法攻+5%，气血+5%，使用绝学伤害提高10%，若目标为被克制目标「对战中」伤害额外提高10%「灵脉化魄」套装手部，仅咒师可用",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E7%A7%98%E9%95%AF"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "implemented": false
+    }
+  ],
+  "sets": [
+    {
+      "name": "鸿宇天石",
+      "members": [
+        "天石命坠",
+        "天石云佩",
+        "天石符珠"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "summary": "免疫击退、拉拽；3格内每个其他角色提供5%双防，上限20%。"
+        },
+        {
+          "pieces": 3,
+          "summary": "方向性范围攻击保护身后直线3格其他友方：免伤、暴击抗性各20%；血量至少50%时自身双防20%，3格其他友方双防增加施加者双防之和的10%。"
+        }
+      ],
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E5%91%BD%E5%9D%A0",
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E4%BA%91%E4%BD%A9",
+        "https://wiki.biligame.com/tdj/%E5%A4%A9%E7%9F%B3%E7%AC%A6%E7%8F%A0"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "openQuestions": [
+        "方向性攻击的身后判定",
+        "三件效果条件作用域",
+        "友方防御加成取值与多个来源叠加"
+      ],
+      "implemented": false,
+      "effectTextFromWiki": "> 饰品 > 套装 > 饰品/套装/鸿宇天石 短 • 刷 • 阅 • 编 • 历 套装效果 [ 编辑 ] 鸿宇天石 ◈[两件] 免疫击退和拉拽，自身 3 格范围内，每多存在 1 个其他角色，自身双防提高 5% （最多提高 20% ） ◈[三件] 遭受方向性范围绝学攻击时，身后直线 3 格内的其他友方免伤和暴击抗性提高 20% 。若气血大于等于 50% ，自身双防提高 20% ，并使 3 格内其他友方双防提高（数值为施加者的（物防+法防）* 10% ） 套装部件 [ 编辑 ] 天石命坠 天石云佩 天石符珠"
+    },
+    {
+      "name": "寰光授剑",
+      "members": [
+        "寰光剑玉",
+        "寰光佩环",
+        "寰光蔽月"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "summary": "疲弱免疫；连击、追击、先攻的伤害增加30%。"
+        },
+        {
+          "pieces": 3,
+          "summary": "连击、追击、先攻、暴击可积累剑意；剑意影响物攻物防并在3层产生回血与迅捷I。使用过伤害绝学的行动结束时消耗剑意，对2格敌人造成物攻10%乘层数的无属相物理伤害；消耗5层另加2回合不可驱散禁疗。"
+        }
+      ],
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E5%89%91%E7%8E%89",
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E4%BD%A9%E7%8E%AF",
+        "https://wiki.biligame.com/tdj/%E5%AF%B0%E5%85%89%E8%94%BD%E6%9C%88"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "openQuestions": [
+        "一次攻击同时满足多个触发条件如何计层",
+        "3层回血是否只在跨过阈值触发",
+        "剑意状态不可驱散与持续时间描述的作用域"
+      ],
+      "implemented": false,
+      "effectTextFromWiki": "> 饰品 > 套装 > 饰品/套装/寰光授剑 短 • 刷 • 阅 • 编 • 历 套装效果 [ 编辑 ] 寰光授剑 ◈[两件] 免疫「疲弱」，连击/追击/先攻伤害提高 30% ◈[三件] 触发连击/追击/先攻/暴击后，自身获得 1 层「剑意」状态。本回合使用过伤害绝学，行动结束时，对自身 2 格范围内所有敌方造成 1 次无属相物理伤害（物攻 10% *「剑意」层数）并消耗所有「剑意」，若本次消耗 5 层「剑意」，则额外施加「无摧·禁疗」状态，持续 2 回合 「无摧·禁疗」： 无法被治疗（不可驱散） 「剑意」：物攻，物防 +3% ， 3 层剑意时，恢复 100% 气血，并获得「迅捷I」状态，持续 2 回合（不可驱散，上限 5 层） 套装部件 [ 编辑 ] 寰光剑玉 寰光佩环 寰光蔽月"
+    },
+    {
+      "name": "荆羽护元",
+      "members": [
+        "荆羽覆心",
+        "荆羽利刹",
+        "荆羽焰鳞"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "summary": "封劲免疫；使用伤害绝学对战前按每2格距离驱散自身1个减益、获得1个随机属性增益，各上限3。"
+        },
+        {
+          "pieces": 3,
+          "summary": "主动攻击后，场上没有带猎印的敌人时给选定格敌人标记2回合；存在猎印敌人时射程增加1。主动对战攻击标记者增伤和暴击率各20%，距离超过5格每格扣15%，最多扣60%。猎印禁止闪避，受羽士对战攻击双防降低30%并在战后消失。"
+        }
+      ],
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E8%8D%86%E7%BE%BD%E8%A6%86%E5%BF%83",
+        "https://wiki.biligame.com/tdj/%E8%8D%86%E7%BE%BD%E5%88%A9%E5%88%B9"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "openQuestions": [
+        "距离边界的取整",
+        "护卫情况下选定目标与实际受击者",
+        "施加与消耗猎印的事件顺序"
+      ],
+      "implemented": false,
+      "effectTextFromWiki": "> 饰品 > 套装 > 饰品/套装/荆羽护元 短 • 刷 • 阅 • 编 • 历 套装效果 [ 编辑 ] 荆羽护元 ◈[两件] 免疫「封劲」，与目标每间隔 2 格距离，使用伤害绝学「对战前」自身驱散 1 个「有害状态」，并获得 1 个随机「属性提升类」状态（最多驱散 3 个，获得 3 个） ◈[三件] 主动攻击后，若场上不存在携带「猎印」状态的敌方，对选取的目标格子上的敌方角色施加「猎印」状态，持续 2 回合。场上有携带「猎印」状态的敌方时，射程 +1 ，主动攻击携带「猎印」目标「对战中」伤害和暴击率提高 20% ，若超过 5 格距离，则每超过 1 格伤害和暴击率额外降低 15% （最多降低 60% ）。 「猎印」：无法发动「闪避」。遭受「羽士」攻击「对战中」物防、法防 -30% （遭受「羽士」攻击「对战后」消失） 套装部件 [ 编辑 ] 荆羽覆心 荆羽利刹 荆羽焰鳞"
+    },
+    {
+      "name": "灵脉化魄",
+      "members": [
+        "化魄法令",
+        "化魄点睛",
+        "化魄秘镯"
+      ],
+      "thresholds": [
+        {
+          "pieces": 2,
+          "summary": "封咒免疫；伤害绝学后有50%概率给目标一个随机减益。"
+        },
+        {
+          "pieces": 3,
+          "summary": "受击时3格内其他友方属相匹配攻击属相则对应免伤增加15%；3格内每个与自身同属相的其他角色提供伤害绝学法攻6%（上限12%）及释放后该技能冷却-1的50%概率（上限100%）。"
+        }
+      ],
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E6%B3%95%E4%BB%A4",
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E7%82%B9%E7%9D%9B",
+        "https://wiki.biligame.com/tdj/%E5%8C%96%E9%AD%84%E7%A7%98%E9%95%AF"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "openQuestions": [
+        "随机状态池与多目标独立判定",
+        "攻击属相变化时匹配规则"
+      ],
+      "implemented": false,
+      "effectTextFromWiki": "> 饰品 > 套装 > 饰品/套装/灵脉化魄 短 • 刷 • 阅 • 编 • 历 套装效果 [ 编辑 ] 灵脉化魄 ◈[两件] 免疫「封咒」，使用伤害绝学后， 50% 概率对目标施加 1 个随机「有害状态」 ◈[三件] 受到攻击时， 3 格范围内存在与攻击者攻击属相相同的其他友方，则对应属相免伤提高 15% 。 3 格范围内每有 1 个与自身属相相同的其他角色，使用伤害绝学时法攻提高 6% （最多提高 12% ），且释放后有 50% 概率（最多 100% 概率）使该绝学冷却时间 -1 。 套装部件 [ 编辑 ] 化魄法令 化魄点睛 化魄秘镯"
+    }
+  ],
+  "souls": [
+    {
+      "title": "魂石·杌晷",
+      "name": "杌晷",
+      "workbookRows": [
+        3
+      ],
+      "twoPieceTextFromWorkbook": "会心+25%",
+      "threePieceTextFromWorkbook": "主动攻击「对战中」若会心高于目标则伤害、暴击伤害提升10%。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "active_combat",
+        "crit_stat_comparison"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·赤练鬼",
+      "name": "赤练鬼",
+      "workbookRows": [
+        4
+      ],
+      "twoPieceTextFromWorkbook": "暴击率+7%",
+      "threePieceTextFromWorkbook": "主动攻击气血高于70%的角色，「对战中」伤害提高20%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E8%B5%A4%E7%BB%83%E9%AC%BC"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "active_combat",
+        "target_hp_gt_70"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·庞邪",
+      "name": "庞邪",
+      "workbookRows": [
+        5
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "获得额外护卫范围时提高2格内友方物防、法防10%，直到额外护卫范围消失。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%BA%9E%E9%82%AA"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "extra_guard_range",
+        "ally_aura",
+        "position"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·妄幻",
+      "name": "妄幻",
+      "workbookRows": [
+        6
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "使用绝学或遭受攻击后，除气血外全属性+3%（最多叠加5层）。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%A6%84%E5%B9%BB"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "after_skill",
+        "after_attacked",
+        "stacks_0_5"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·翯號",
+      "name": "翯號",
+      "workbookRows": [
+        7
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "物理穿透提高10%，气血大于等于90%，双防+10%，否则物攻提高12%。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E7%BF%AF%E8%99%9F"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "hp_gte_90",
+        "penetration",
+        "conditional_stats"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·妖将",
+      "name": "妖将",
+      "workbookRows": [
+        8
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "气血大于等于70%时，暴击抗性提高15%，若战后气血低于70%，则恢复已损失气血的50%（每回合只能触发1次）",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%A6%96%E5%B0%86"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "hp_gte_70",
+        "after_combat",
+        "missing_hp_heal",
+        "round_limit"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·罗鬼",
+      "name": "罗鬼",
+      "workbookRows": [
+        9
+      ],
+      "twoPieceTextFromWorkbook": "物攻+5%",
+      "threePieceTextFromWorkbook": "伤害提升10%，主动攻击「对战中」免伤提升10%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E7%BD%97%E9%AC%BC"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "damage_modifier",
+        "active_combat_mitigation"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·腐虫",
+      "name": "腐虫",
+      "workbookRows": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "twoPieceTextFromWorkbook": "物攻+5%",
+      "threePieceTextFromWorkbook": "范围伤害提高5%，且主动攻击每命中一个目标，下次主动绝学的伤害提高5%（最高提高15%）",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E8%85%90%E8%99%AB"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "aoe",
+        "hit_target_count",
+        "next_skill_bonus"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·荒蛰",
+      "name": "荒蛰",
+      "workbookRows": [
+        14
+      ],
+      "twoPieceTextFromWorkbook": "物攻+5%",
+      "threePieceTextFromWorkbook": "普通攻击伤害提升20%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E8%8D%92%E8%9B%B0"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "normal_attack"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·羽魅",
+      "name": "羽魅",
+      "workbookRows": [
+        15
+      ],
+      "twoPieceTextFromWorkbook": "物攻+5%",
+      "threePieceTextFromWorkbook": "若自身2格没有其他友方角色，则伤害、免伤提高12%。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "no_other_ally_within_2"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·伥厉",
+      "name": "伥厉",
+      "workbookRows": [
+        16
+      ],
+      "twoPieceTextFromWorkbook": "物攻+5%",
+      "threePieceTextFromWorkbook": "绝学伤害提高5%，使用伤害绝学每伤害1个敌人概率提升25%（最高100%）使该绝学冷却时间-1。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "damaged_enemy_count",
+        "probability",
+        "skill_cooldown"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·咒石兵",
+      "name": "咒石兵",
+      "workbookRows": [
+        17
+      ],
+      "twoPieceTextFromWorkbook": "物防、法防+5%",
+      "threePieceTextFromWorkbook": "免伤提升10%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%92%92%E7%9F%B3%E5%85%B5"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "mitigation"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·尸魔术士",
+      "name": "尸魔术士",
+      "workbookRows": [
+        18
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "治疗效果+20%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "healing"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·鬼道者",
+      "name": "鬼道者",
+      "workbookRows": [
+        19,
+        20,
+        21
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "每有一个主动绝学处于冷却中伤害、免伤提升7%（最高14%）",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "active_skill_cooldowns"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·冥葵",
+      "name": "冥葵",
+      "workbookRows": [
+        22
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "对友方使用绝学后，40%概率使目标获得1个随机「有益状态」。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "ally_skill",
+        "random_buff"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·咒魔术士",
+      "name": "咒魔术士",
+      "workbookRows": [
+        23
+      ],
+      "twoPieceTextFromWorkbook": "气血+10%",
+      "threePieceTextFromWorkbook": "对友方使用单体绝学后，驱散目标1个「有害状态」。对友方使用范围绝学后，60%概率驱散目标1个「有害状态」",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%92%92%E9%AD%94%E6%9C%AF%E5%A3%AB"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "ally_skill",
+        "single_vs_aoe",
+        "dispel",
+        "probability"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·咒首蜈蚣",
+      "name": "咒首蜈蚣",
+      "workbookRows": [
+        24
+      ],
+      "twoPieceTextFromWorkbook": "法攻+5%",
+      "threePieceTextFromWorkbook": "使用伤害绝学时伤害提升10%。气血不满时，穿透、护盾获得加成提升15%。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%92%92%E9%A6%96%E8%9C%88%E8%9A%A3"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "damage_skill",
+        "not_full_hp",
+        "penetration",
+        "shield_gain"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·朱焰魔火",
+      "name": "朱焰魔火",
+      "workbookRows": [
+        25
+      ],
+      "twoPieceTextFromWorkbook": "法攻+5%",
+      "threePieceTextFromWorkbook": "使用绝学时伤害提升10%，使用范围绝学时伤害额外提高5%",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E6%9C%B1%E7%84%B0%E9%AD%94%E7%81%AB"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "skill",
+        "aoe"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·妖术师",
+      "name": "妖术师",
+      "workbookRows": [
+        26
+      ],
+      "twoPieceTextFromWorkbook": "法攻+5%",
+      "threePieceTextFromWorkbook": "每当使用伤害绝学，50%概率使该绝学冷却时间-2",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%C2%B7%E5%A6%96%E6%9C%AF%E5%B8%88"
+      ],
+      "reviewStatus": "wiki_text_checked",
+      "requiredState": [
+        "damage_skill",
+        "probability",
+        "skill_cooldown"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    },
+    {
+      "title": "魂石·怨忽",
+      "name": "怨忽",
+      "workbookRows": [
+        27
+      ],
+      "twoPieceTextFromWorkbook": "法攻+5%",
+      "threePieceTextFromWorkbook": "使用绝学时伤害提高8%，主动攻击「对战中」伤害提升10%。",
+      "sources": [
+        "https://wiki.biligame.com/tdj/%E9%AD%82%E7%9F%B3%E5%9B%BE%E9%89%B4"
+      ],
+      "reviewStatus": "wiki_index_checked",
+      "requiredState": [
+        "skill",
+        "active_combat"
+      ],
+      "implemented": false,
+      "interactionStatus": "pending_event_order_and_boundary_validation"
+    }
+  ],
+  "missingFromWorkbookSoulIndex": [
+    "刚破鬼",
+    "凶骸兵",
+    "鬼面花蛛",
+    "九环朱蝮",
+    "百眼翼魔",
+    "头狼",
+    "幽魉",
+    "死魇鬼卒",
+    "冰魔蝎"
+  ],
+  "coverageLimits": [
+    "未逐项核对所有单件饰品",
+    "未录入魂石等级与随机词条范围",
+    "未核对星魂与星之晶规则",
+    "首版角色实际配装未绑定",
+    "未知对方装备不等于没有装备效果"
+  ]
+}

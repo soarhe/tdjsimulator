@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "id": "model-example-not-replay",
+  "revision": 0,
+  "phase": "preLock",
+  "configs": {
+    "ally:qin": {
+      "heroId": "琴色",
+      "job": null,
+      "accessories": {},
+      "souls": {},
+      "skills": null
+    }
+  },
+  "units": {
+    "ally:qin": {
+      "id": "ally:qin",
+      "side": "ally",
+      "heroId": "琴色",
+      "kind": "hero",
+      "ownerId": null,
+      "turnMode": "independent",
+      "configId": "ally:qin",
+      "sex": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "element": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "job": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "position": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "alive": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "actionAvailable": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "completedActions": 0,
+      "panel": {
+        "kind": "unknown",
+        "reason": "面板为已含可见增益的最终值"
+      },
+      "statuses": {
+        "kind": "unknown",
+        "reason": "未读状态不等于无状态"
+      },
+      "skillCooldowns": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "talentCounters": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "deathPrevention": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "hiddenEffects": {
+        "kind": "unknown",
+        "reason": "未识别条件效果不能计为零"
+      },
+      "shield": {
+        "kind": "unknown",
+        "reason": "护盾未读取"
+      }
+    },
+    "enemy:qin": {
+      "id": "enemy:qin",
+      "side": "enemy",
+      "heroId": "琴色",
+      "kind": "hero",
+      "ownerId": null,
+      "turnMode": "independent",
+      "configId": null,
+      "sex": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "element": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "job": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "position": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "alive": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "actionAvailable": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "completedActions": 0,
+      "panel": {
+        "kind": "unknown",
+        "reason": "面板为已含可见增益的最终值"
+      },
+      "statuses": {
+        "kind": "unknown",
+        "reason": "未读状态不等于无状态"
+      },
+      "skillCooldowns": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "talentCounters": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "deathPrevention": {
+        "kind": "unknown",
+        "reason": "尚未读取"
+      },
+      "hiddenEffects": {
+        "kind": "unknown",
+        "reason": "未识别条件效果不能计为零"
+      },
+      "shield": {
+        "kind": "unknown",
+        "reason": "护盾未读取"
+      }
+    }
+  },
+  "round": {
+    "kind": "unknown",
+    "reason": "尚未读取"
+  },
+  "firstSide": {
+    "kind": "unknown",
+    "reason": "尚未读取"
+  },
+  "actingSide": {
+    "kind": "unknown",
+    "reason": "尚未读取"
+  },
+  "operation": {
+    "current": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "attachedQueue": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "secondsRemaining": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "reserveBySide": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    }
+  },
+  "map": {
+    "id": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "cells": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "terrain": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "objects": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "domains": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "safeSchedule": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    }
+  },
+  "scores": {
+    "ally": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "enemy": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "sourcePolicy": "readClientTotals"
+  },
+  "support": {
+    "ally": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    },
+    "enemy": {
+      "kind": "unknown",
+      "reason": "尚未读取"
+    }
+  },
+  "outcome": {
+    "kind": "unknown",
+    "reason": "尚未读取"
+  },
+  "pendingResolutions": [],
+  "events": []
+}

@@ -1,0 +1,27 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.soarhe.tdj'
+    compileSdk 36
+    buildToolsVersion "36.1.0"
+    defaultConfig {
+        applicationId 'com.soarhe.tdj.assistant'
+        minSdk 30
+        targetSdk 36
+        versionCode 1
+        versionName '0.1.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    sourceSets.main.assets.srcDir layout.buildDirectory.dir('generated/simulatorAssets')
+}
+tasks.register('syncSimulator', Copy) {
+    from('../../h5/dist') { include 'engine.mjs', 'workbook.json' }
+    into layout.buildDirectory.dir('generated/simulatorAssets')
+}
+tasks.named('preBuild').configure { dependsOn 'syncSimulator' }
+dependencies {
+    implementation 'com.google.mlkit:text-recognition-chinese:16.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}
